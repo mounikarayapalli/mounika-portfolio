@@ -93,10 +93,10 @@ if (themeToggleBtn) {
   const themeIcon = themeToggleBtn.querySelector('i');
   let savedTheme = localStorage.getItem('theme');
 
-  // Set dark theme as default if not previously set
+  // Set light theme as default if not previously set
   if (!savedTheme) {
-    savedTheme = 'dark';
-    localStorage.setItem('theme', 'dark');
+    savedTheme = 'light';
+    localStorage.setItem('theme', 'light');
   }
 
   if (savedTheme === 'dark') {
