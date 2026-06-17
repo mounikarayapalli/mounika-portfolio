@@ -126,42 +126,6 @@ if (themeToggleBtn) {
 
 // PROJECT MODAL LOGIC
 const projectsData = {
-  project1: {
-    badge: 'AI',
-    title: 'AI Learning Companion',
-    shortDesc: 'An adaptive e-learning platform powered by AI that personalizes learning paths based on student progress and style.',
-    longDesc: 'The AI Learning Companion is a comprehensive educational platform designed to adapt to individual student needs. By analyzing learning patterns, quiz scores, and engagement metrics, the system creates personalized curriculum paths.<br><br>Key features include:<br>- Adaptive skill assessments<br>- Personalized content recommendations<br>- Real-time progress tracking<br>- Interactive AI tutor for complex topics',
-    image: 'project1.png',
-    category: 'EdTech / AI',
-    features: ['React', 'Next.js', 'Machine Learning', 'Python backend', 'Adaptive Algorithms'],
-    techTags: ['Python', 'ML', 'React', 'Tailwind', 'Node.js'],
-    demoUrl: '#',
-    githubUrl: '#'
-  },
-  project2: {
-    badge: 'NLP',
-    title: 'AI Career Counselor & Resume Analyzer',
-    shortDesc: 'An intelligent tool that analyzes resumes, suggests improvements, and provides personalized career guidance using NLP.',
-    longDesc: 'This application serves as an automated career coach. It parses user resumes, extracts key skills and experiences, and compares them against current job market trends using Natural Language Processing.<br><br>Key features include:<br>- Automated ATS compatibility scoring<br>- Action verb suggestions<br>- Missing skills identification<br>- Personalized job role matching',
-    image: 'project2.png',
-    category: 'HR Tech / NLP',
-    features: ['Resume Parsing', 'Keyword Analysis', 'ATS Scoring', 'Flask Backend', 'Interactive UI'],
-    techTags: ['NLP', 'Python', 'Flask', 'NLTK', 'Vue.js'],
-    demoUrl: '#',
-    githubUrl: '#'
-  },
-  project3: {
-    badge: 'Web3',
-    title: 'MemeChain',
-    shortDesc: 'A blockchain-based meme platform where content ownership and attribution is verified on a decentralized ledger.',
-    longDesc: 'MemeChain addresses the problem of digital content attribution by leveraging blockchain technology. Creators can mint their memes as unique assets, ensuring they get credit whenever their content goes viral.<br><br>Key features include:<br>- MetaMask wallet integration<br>- Smart contract minting<br>- Tipping system via crypto<br>- Decentralized storage (IPFS)',
-    image: 'project3.png',
-    category: 'Blockchain',
-    features: ['Smart Contracts', 'Wallet Connect', 'Decentralized Storage', 'Web3.js', 'React'],
-    techTags: ['Blockchain', 'Solidity', 'Web3', 'IPFS', 'Ethereum'],
-    demoUrl: '#',
-    githubUrl: '#'
-  },
   project4: {
     badge: 'Web',
     title: 'YUMMY Dine Divine',

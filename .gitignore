@@ -1,11 +1,12 @@
-# Backup files
+# IDEs and editors
+.vscode/
+.idea/
+
+# Backups and temporary files
 *.bak
 *.tmp
+*.log
 
-# VS Code directory (optional, but usually ignored)
-.vscode/
-
-# OS files
-Thumbs.db
-desktop.ini
+# OS generated files
 .DS_Store
+Thumbs.db
