@@ -1,12 +1,12 @@
-# Mounika Rayapalli - Computer Science Portfolio
+# Hello.. i'm Mounika Rayapalli
 
-Welcome to my portfolio! I am a passionate Computer Science & Engineering student specializing in **Artificial Intelligence, Computer Vision, and Full-Stack Development**. I love transforming complex ideas into functional, premium, and user-centric digital experiences.
+Welcome to my portfolio! I am a Computer Science & Engineering student specializing in **Artificial Intelligence, Computer Vision, and Full-Stack Development**. I love transforming complex ideas into functional, premium, and user-centric digital experiences.
 
 ---
 
 ## 🚀 About Me
 * 🎓 **Education**: Currently pursuing a **B.Tech in Computer Science & Engineering** at Dhanekula Institute of Engineering & Technology (CGPA: 8.4) | Diploma in CSE from VKR & VNB Polytechnic (75.88%).
-* 🌟 **Focus Areas**: Machine Learning, Computer Vision, Full-Stack Development, and Cloud/DevOps.
+* 🌟 **Focus Areas**: Artificaial Intelligence & Machine Learning, Computer Vision, Full-Stack Development, and Cloud/DevOps.
 * 💡 **Aspiration**: Building intelligent products that combine creativity and technical usability to make a positive real-world impact.
 
 ---
