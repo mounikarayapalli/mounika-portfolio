@@ -4,7 +4,7 @@ Welcome to my portfolio! I am a Computer Science & Engineering student specializ
 
 ---
 
-## 🚀 About Me
+## About Me
 * 🎓 **Education**: Currently pursuing a **B.Tech in Computer Science & Engineering** at Dhanekula Institute of Engineering & Technology (CGPA: 8.4) | Diploma in CSE from VKR & VNB Polytechnic (75.88%).
 * 🌟 **Focus Areas**: Artificaial Intelligence & Machine Learning, Computer Vision, Full-Stack Development, and Cloud/DevOps.
 * 💡 **Aspiration**: Building intelligent products that combine creativity and technical usability to make a positive real-world impact.
@@ -20,7 +20,7 @@ Welcome to my portfolio! I am a Computer Science & Engineering student specializ
 
 ---
 
-## 🛠️ Tech Stack & Skills
+##  Tech Stack & Skills
 | Category | Technologies |
 | :--- | :--- |
 | **Frontend** | HTML5, CSS3, JavaScript (ES6+), Bootstrap, jQuery, DOM Manipulation |
@@ -32,7 +32,7 @@ Welcome to my portfolio! I am a Computer Science & Engineering student specializ
 
 ## 📁 Featured Projects
 
-### 🍽️ 1. YUMMY Dine Divine
+###  1. YUMMY Dine Divine
 A premium, fully responsive restaurant landing website built for high-end dining experiences.
 * **Tech Stack**: HTML, CSS, JavaScript
 * **Key Features**:
@@ -42,7 +42,7 @@ A premium, fully responsive restaurant landing website built for high-end dining
   * Clean, polished hover animations and transitions.
 * **Folder**: `yummy food project/`
 
-### 💻 2. TECH DESIRE
+###  2. TECH DESIRE
 An interactive educational platform for software and hardware training courses.
 * **Tech Stack**: HTML, CSS, JavaScript, Bootstrap
 * **Key Features**:
