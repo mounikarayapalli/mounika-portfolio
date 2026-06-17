@@ -1416,6 +1416,8 @@
     grid-template-columns: 1fr;
   }.projects-grid {
     grid-template-columns: 1fr;
+  }.cert-grid {
+    grid-template-columns: 1fr;
   }.bento-grid {
     grid-template-columns: 1fr;
   }footer {
@@ -2377,10 +2379,13 @@
   }
 }
 @media (max-width: 480px) {
+  section {
+    padding: 50px 16px;
+  }
   .section-internships {
-    padding: 60px 20px 30px;
+    padding: 50px 16px 30px;
   }
   .internship-row {
-    padding: 20px;
+    padding: 16px;
   }
 }
