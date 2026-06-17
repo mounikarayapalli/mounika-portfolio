@@ -131,7 +131,7 @@ const projectsData = {
     title: 'YUMMY Dine Divine',
     shortDesc: 'A premium responsive restaurant landing website featuring interactive menu sections, booking forms, events showcases, and chefs information.',
     longDesc: 'YUMMY Dine Divine is an elegant landing page designed for a high-end restaurant to showcase culinary offerings and streamline table reservations.<br><br>Key features include:<br>- Fully responsive, mobile-first design<br>- Interactive menu catalog and dynamic item filter panels<br>- Online book-a-table reservation forms<br>- Integrated chefs, events, and gallery display grids',
-    image: 'project4.png',
+    image: 'assets/images/project4.png',
     category: 'Web Development',
     features: ['Responsive UI Grid', 'Interactive Menu Cards', 'Table Reservation Form', 'CSS Hover Transitions', 'Structured Layout Sections'],
     techTags: ['HTML', 'CSS', 'JavaScript'],
@@ -227,28 +227,28 @@ const certificatesData = {
     badgeColor: '#3776AB',
     title: 'Python Foundation',
     issuerDate: 'Infosys Springboard • <i class="fa-regular fa-calendar"></i> 2024',
-    image: 'cert_python.png'
+    image: 'assets/certificates/cert_python.png'
   },
   cert2: {
     badge: 'Cloud',
     badgeColor: '#C74634',
     title: 'Oracle Cloud Foundations Associate',
     issuerDate: 'ORACLE University • <i class="fa-regular fa-calendar"></i> 2025',
-    image: 'cert_oracle.png'
+    image: 'assets/certificates/cert_oracle.png'
   },
   cert3: {
     badge: 'Programming',
     badgeColor: '#E85D04',
     title: 'Java Developer Certification',
     issuerDate: 'Infosys Springboard • <i class="fa-regular fa-calendar"></i> 2024',
-    image: 'cert_java.png'
+    image: 'assets/certificates/cert_java.png'
   },
   cert4: {
     badge: 'AI',
     badgeColor: '#1a73e8',
     title: 'Google Cloud: Responsible AI',
     issuerDate: 'Google Cloud • <i class="fa-regular fa-calendar"></i> 2025',
-    image: 'Applying AI Principles with Google Cloud.png'
+    image: 'assets/certificates/Applying AI Principles with Google Cloud.png'
   }
 };
 
