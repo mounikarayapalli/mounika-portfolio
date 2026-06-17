@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mounika | CSE Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">Mounika <span>R.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Achievements</a></li>
+      <li class="mobile-only"><a href="#contact" class="nav-cta">Let's Connect</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#contact" class="nav-cta desktop-only">Let's Connect</a>
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge badge-green"><i class="fa-solid fa-circle fa-xs"></i> AI ML &amp; full stack Developer</div>
+        
+        <h1 class="hero-name">Mounika Rayapalli</h1>
+        
+        <!-- Typewriter Container -->
+        <h3 class="typewriter-headline">
+          I specialize in <span id="typing-text" class="typewriter-dynamic">AI solutions.</span><span class="typewriter-cursor">|</span>
+        </h3>
+        
+        <p class="hero-tagline">I build practical AI solutions, interactive web applications, and vision-driven systems with a focus on solving real-world challenges.</p>
+        
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary dominant"><i class="fa-solid fa-rocket"></i> Explore My Work</a>
+          <a href="javascript:void(0)" onclick="openResumeModal()" class="btn-secondary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
+          <a href="#contact" class="btn-contact-connect"><i class="fa-solid fa-envelope"></i> Let's Connect</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="hero-img-frame developer-showcase">
+          <div class="visual-grid-bg"></div>
+          <img src="mounika.png" alt="Mounika" class="user-photo">
+          <div class="cv-bracket cb-tl"></div>
+          <div class="cv-bracket cb-tr"></div>
+          <div class="cv-bracket cb-bl"></div>
+          <div class="cv-bracket cb-br"></div>
+          <div class="float-badge b1"><i class="fa-solid fa-brain" style="color:#C74634;"></i> AI Developer</div>
+          <div class="float-badge b2"><i class="fa-solid fa-lightbulb" style="color:#F0B90B;"></i> Problem solver</div>
+          <div class="float-badge b3"><i class="fa-solid fa-circle-check" style="color:#34A853;"></i> Smart Solutions</div>
+          <div class="visual-glow-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TRANSITION -->
+  <div class="hero-about-transition">
+    <div class="transition-glow"></div>
+    <div class="transition-line-wrap">
+      <div class="transition-line"></div>
+      <div class="transition-pulse-dot"></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      
+      <div class="about-bento-layout">
+        <!-- LEFT SIDE: Storytelling -->
+        <div class="about-story-left reveal-left">
+          <p class="section-label">Who I Am</p>
+          <h2 class="about-headline">Creating AI-Powered Experiences That <span>Solve Real Problems</span></h2>
+          
+          <!-- Profile Bento Card -->
+          <div class="about-profile-card">
+            <div class="ap-card-glow"></div>
+            <div class="ap-card-content">
+              <div class="ap-header">
+                <div class="ap-icon-box"><i class="fa-solid fa-code-branch"></i></div>
+                <span class="ap-badge">CSE Core Student</span>
+              </div>
+              <h3>Building Smart Solutions With Code &amp; Creativity</h3>
+              <p class="ap-subtitle">Undergraduate student focused on creating intelligent applications through AI, Full-Stack Development, and modern technologies.</p>
+              <div class="ap-footer">
+                <span class="ap-location"><i class="fa-solid fa-location-dot"></i> Vijayawada, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- RIGHT SIDE: Tab Switching Content -->
+        <div class="about-story-right reveal-right">
+          <div class="about-tabs-container">
+            <div class="about-tabs-header">
+              <button class="about-tab-btn active" onclick="switchAboutTab(event, 'journey')">My Journey</button>
+              <button class="about-tab-btn" onclick="switchAboutTab(event, 'build')">What I Build</button>
+              <button class="about-tab-btn" onclick="switchAboutTab(event, 'vision')">My Vision</button>
+            </div>
+            <div class="about-tabs-body">
+              <!-- Tab Content: Journey -->
+              <div class="about-tab-content active" id="tab-journey">
+                <div class="tab-content-inner">
+                  <div class="story-icon-box"><i class="fa-solid fa-route"></i></div>
+                  <p>My journey in technology began with a strong academic foundation through a Diploma in Computer Science Engineering, where I developed practical programming and problem-solving skills. Currently, I am pursuing a B.Tech in Computer Science & Engineering, expanding my knowledge in Artificial Intelligence, Computer Vision, and modern software development while continuously building real-world projects.</p>
+                </div>
+              </div>
+              
+              <!-- Tab Content: Build -->
+              <div class="about-tab-content" id="tab-build">
+                <div class="tab-content-inner">
+                  <div class="story-icon-box"><i class="fa-solid fa-cube"></i></div>
+                  <p>I am passionate about creating intelligent and impactful technology solutions. My interests lie in Artificial Intelligence, Machine Learning, Computer Vision, and Full-Stack Development, where I enjoy transforming ideas into practical applications that solve real-world challenges and deliver meaningful user experiences.</p>
+                </div>
+              </div>
+              
+              <!-- Tab Content: Vision -->
+              <div class="about-tab-content" id="tab-vision">
+                <div class="tab-content-inner">
+                  <div class="story-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                  <p>My goal is to gain valuable industry experience through internships, contribute to innovative projects, and grow into an AI Engineer or Full-Stack Developer. In the long term, I aspire to build technology products that combine intelligence, creativity, and usability to make a positive impact on people's lives.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- TECHNICAL FOCUS CARDS BELOW -->
+      <div class="tech-focus-container-premium">
+        <h3 class="subsection-title-premium">Technical Specialization</h3>
+        <div class="tech-focus-grid-premium">
+          
+          <!-- AI & ML CARD -->
+          <div class="tech-focus-card-premium tf-ai reveal" style="transition-delay:0.05s">
+            <div class="tf-glow"></div>
+            <div class="tf-border-glow"></div>
+            <div class="tf-card-icon-premium purple"><i class="fa-solid fa-brain"></i></div>
+            <h4>AI &amp; Machine Learning</h4>
+            <p class="tf-desc">Exploring intelligent systems that enhance learning, productivity, and user experiences.</p>
+            <div class="tf-bullets-premium">
+              <span>NLP</span><span>LLMs</span><span>TensorFlow</span><span>Hugging Face</span>
+            </div>
+          </div>
+          
+          <!-- FULL STACK CARD -->
+          <div class="tech-focus-card-premium tf-fs reveal" style="transition-delay:0.1s">
+            <div class="tf-glow"></div>
+            <div class="tf-border-glow"></div>
+            <div class="tf-card-icon-premium blue"><i class="fa-solid fa-globe"></i></div>
+            <h4>Full Stack Development</h4>
+            <p class="tf-desc">Designing responsive and user-focused applications with clean interfaces and scalable functionality.</p>
+            <div class="tf-bullets-premium">
+              <span>HTML/CSS</span><span>JavaScript</span><span>Python</span><span>SQL</span>
+            </div>
+          </div>
+          
+          <!-- SOFTWARE ENGINEERING CARD -->
+          <div class="tech-focus-card-premium tf-se reveal" style="transition-delay:0.15s">
+            <div class="tf-glow"></div>
+            <div class="tf-border-glow"></div>
+            <div class="tf-card-icon-premium emerald"><i class="fa-solid fa-laptop-code"></i></div>
+            <h4>Software Engineering</h4>
+            <p class="tf-desc">Building reliable and efficient software systems through structured design, problem solving, and best practices.</p>
+            <div class="tf-bullets-premium">
+              <span>Java</span><span>OOP</span><span>DBMS</span><span>Git</span><span>Software Design</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Animated Section Divider -->
+      <div class="animated-divider-premium">
+        <span class="div-dot d1"></span>
+        <span class="div-dot d2"></span>
+        <span class="div-dot d3"></span>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <p class="section-label reveal">Technical Proficiency</p>
+      <h2 class="section-title reveal">Skills <span>Catalog</span></h2>
+      
+      <div class="skills-small-cards-grid">
+        
+        <!-- CARD 1: Languages -->
+        <div class="small-skill-card languages-card reveal" style="transition-delay:0.05s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-code"></i></div>
+            <h3 class="ss-card-title">Languages</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">Python</span>
+            <span class="ss-skill-tag">Java</span>
+            <span class="ss-skill-tag">SQL</span>
+          </div>
+        </div>
+
+        <!-- CARD 2: AI & ML -->
+        <div class="small-skill-card ai-card reveal" style="transition-delay:0.1s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="ss-card-title">AI &amp; ML</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">Machine Learning</span>
+            <span class="ss-skill-tag">Deep Learning</span>
+            <span class="ss-skill-tag">NLP</span>
+            <span class="ss-skill-tag">Computer Vision</span>
+            <span class="ss-skill-tag">Generative AI</span>
+            <span class="ss-skill-tag">LLMs</span>
+            <span class="ss-skill-tag">Prompt Engineering</span>
+            <span class="ss-skill-tag">YOLO</span>
+            <span class="ss-skill-tag">Hugging Face</span>
+          </div>
+        </div>
+
+        <!-- CARD 3: Web development -->
+        <div class="small-skill-card webdev-card reveal" style="transition-delay:0.15s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-desktop"></i></div>
+            <h3 class="ss-card-title">Web development</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">HTML</span>
+            <span class="ss-skill-tag">CSS</span>
+            <span class="ss-skill-tag">JavaScript</span>
+            <span class="ss-skill-tag">jQuery</span>
+            <span class="ss-skill-tag">DOM</span>
+            <span class="ss-skill-tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- CARD 4: Frameworks -->
+        <div class="small-skill-card frameworks-card reveal" style="transition-delay:0.2s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 class="ss-card-title">Frameworks</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">TensorFlow</span>
+            <span class="ss-skill-tag">Scikit-learn</span>
+            <span class="ss-skill-tag">OpenCV</span>
+            <span class="ss-skill-tag">React.js</span>
+            <span class="ss-skill-tag">Streamlit</span>
+            <span class="ss-skill-tag">FastAPI</span>
+            <span class="ss-skill-tag">Flask</span>
+          </div>
+        </div>
+
+        <!-- CARD 5: Databases -->
+        <div class="small-skill-card databases-card reveal" style="transition-delay:0.25s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-database"></i></div>
+            <h3 class="ss-card-title">Databases</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">MySQL</span>
+            <span class="ss-skill-tag">PostgreSQL</span>
+            <span class="ss-skill-tag">MongoDB</span>
+            <span class="ss-skill-tag">Firebase</span>
+          </div>
+        </div>
+
+        <!-- CARD 6: Cloud & Tools -->
+        <div class="small-skill-card tools-card reveal" style="transition-delay:0.3s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3 class="ss-card-title">Cloud &amp; Tools</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">Firebase</span>
+            <span class="ss-skill-tag">Git</span>
+            <span class="ss-skill-tag">GitHub</span>
+            <span class="ss-skill-tag">Postman</span>
+            <span class="ss-skill-tag">PyCharm</span>
+            <span class="ss-skill-tag">VS Code</span>
+          </div>
+        </div>
+
+        <!-- CARD 7: Core Areas -->
+        <div class="small-skill-card core-card reveal" style="transition-delay:0.35s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-microchip"></i></div>
+            <h3 class="ss-card-title">Core Areas</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">Full Stack Development</span>
+            <span class="ss-skill-tag">AI Chatbots</span>
+            <span class="ss-skill-tag">Data Analytics</span>
+            <span class="ss-skill-tag">Speech Technologies</span>
+          </div>
+        </div>
+
+        <!-- CARD 8: Professional Strengths -->
+        <div class="small-skill-card strengths-card reveal" style="transition-delay:0.4s">
+          <div class="skills-glow-spot"></div>
+          <div class="ss-card-header">
+            <div class="ss-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3 class="ss-card-title">Professional Strengths</h3>
+          </div>
+          <div class="ss-card-skills">
+            <span class="ss-skill-tag">Problem Solving</span>
+            <span class="ss-skill-tag">Continuous Learning</span>
+            <span class="ss-skill-tag">Analytical Thinking</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label reveal">What I've Built</p>
+      <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card reveal" style="transition-delay:0.05s">
+          <div class="project-thumb">
+            <img src="project1.png" alt="AI Learning Companion" class="project-img">
+            <div class="project-overlay project-overlay-blue">
+              <a href="javascript:void(0)" class="overlay-btn" onclick="openProjectModal('project1')">View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI Learning Companion</h3>
+            <p class="project-desc">An adaptive e-learning platform powered by AI that personalizes learning paths based
+              on student progress and style.</p>
+            <div class="tech-tags">
+              <span class="tech-tag" style="background:#EEE8FF;color:#6A1E55;">Python</span>
+              <span class="tech-tag" style="background:#E8F4FF;color:#1B3C53;">ML</span>
+              <span class="tech-tag" style="background:#FFF0E8;color:#A53860;">React</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="javascript:void(0)" class="project-link" onclick="openProjectModal('project1')">View Details <i
+                  class="fa-solid fa-angle-right"></i></a>
+              <a href="#" class="project-link demo-link">Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:0.1s">
+          <div class="project-thumb">
+            <img src="project2.png" alt="AI Career Counselor" class="project-img">
+            <div class="project-overlay project-overlay-green">
+              <a href="javascript:void(0)" class="overlay-btn" onclick="openProjectModal('project2')">View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI Career Counselor &amp; Resume Analyzer</h3>
+            <p class="project-desc">An intelligent tool that analyzes resumes, suggests improvements, and provides
+              personalized career guidance using NLP.</p>
+            <div class="tech-tags">
+              <span class="tech-tag" style="background:#E8FFF0;color:#3A0519;">NLP</span>
+              <span class="tech-tag" style="background:#FFFAE0;color:#432323;">Python</span>
+              <span class="tech-tag" style="background:#FFF0F0;color:#670D2F;">Flask</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="javascript:void(0)" class="project-link" onclick="openProjectModal('project2')">View Details <i
+                  class="fa-solid fa-angle-right"></i></a>
+              <a href="#" class="project-link demo-link">Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:0.15s">
+          <div class="project-thumb">
+            <img src="project3.png" alt="MemeChain" class="project-img">
+            <div class="project-overlay project-overlay-purple">
+              <a href="javascript:void(0)" class="overlay-btn" onclick="openProjectModal('project3')">View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">MemeChain</h3>
+            <p class="project-desc">A blockchain-based meme platform where content ownership and attribution is verified
+              on a decentralized ledger.</p>
+            <div class="tech-tags">
+              <span class="tech-tag" style="background:#E8F6FF;color:#030637;">Blockchain</span>
+              <span class="tech-tag" style="background:#FFFAE0;color:#b38900;">Solidity</span>
+              <span class="tech-tag" style="background:#EEE8FF;color:#6A1E55;">Web3</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="javascript:void(0)" class="project-link" onclick="openProjectModal('project3')">View Details <i
+                  class="fa-solid fa-angle-right"></i></a>
+              <a href="#" class="project-link demo-link">Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:0.2s">
+          <div class="project-thumb">
+            <img src="project4.png" alt="YUMMY Dine Divine" class="project-img">
+            <div class="project-overlay project-overlay-orange">
+              <a href="javascript:void(0)" class="overlay-btn" onclick="openProjectModal('project4')">View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">YUMMY Dine Divine</h3>
+            <p class="project-desc">A premium responsive restaurant landing website featuring interactive menu sections, booking forms, events showcases, and chefs information.</p>
+            <div class="tech-tags">
+              <span class="tech-tag" style="background:#FFF0E8;color:#E85D04;">HTML</span>
+              <span class="tech-tag" style="background:#E8F4FF;color:#2196F3;">CSS</span>
+              <span class="tech-tag" style="background:#FFFAE0;color:#b38900;">JS</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="javascript:void(0)" class="project-link" onclick="openProjectModal('project4')">View Details <i
+                  class="fa-solid fa-angle-right"></i></a>
+              <a href="yummy food project/home_page.html" target="_blank" class="project-link demo-link">Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:0.25s">
+          <div class="project-thumb">
+            <img src="TECH DESIRE/logo.jpg" alt="TECH DESIRE" class="project-img">
+            <div class="project-overlay project-overlay-purple">
+              <a href="javascript:void(0)" class="overlay-btn" onclick="openProjectModal('project5')">View Details</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">TECH DESIRE</h3>
+            <p class="project-desc">An interactive educational portal for software training, featuring dynamic study paths, automated quizzes, and ISO certifications.</p>
+            <div class="tech-tags">
+              <span class="tech-tag" style="background:#E8F4FF;color:#1B3C53;">HTML/CSS</span>
+              <span class="tech-tag" style="background:#FFF0E8;color:#A53860;">JS</span>
+              <span class="tech-tag" style="background:#EEE8FF;color:#6A1E55;">Bootstrap</span>
+            </div>
+            <div class="project-footer-links">
+              <a href="javascript:void(0)" class="project-link" onclick="openProjectModal('project5')">View Details <i
+                  class="fa-solid fa-angle-right"></i></a>
+              <a href="TECH DESIRE/index.html" target="_blank" class="project-link demo-link">Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIPS -->
+  <section id="experience" class="section-internships">
+    <div class="section-inner">
+      <p class="section-label reveal">Professional Experience</p>
+      <h2 class="section-title reveal">Internship <span>History</span></h2>
+      
+      <div class="internships-list">
+        <!-- Internship 1 -->
+        <div class="internship-row reveal">
+          <div class="intern-left">
+            <div class="intern-dot-container">
+              <span class="intern-dot"></span>
+            </div>
+            <div class="intern-meta">
+              <h3 class="intern-role">Cloud Infrastructure &amp; DevOps Engineer</h3>
+              <div class="intern-company"><i class="fa-solid fa-building"></i> BlackBucks Group</div>
+              <div class="intern-date"><i class="fa-regular fa-calendar"></i> May 2026 &ndash; Present</div>
+            </div>
+          </div>
+          <div class="intern-right">
+            <ul class="intern-bullets">
+              <li>Provisioned and configured secure Oracle Cloud Infrastructure (OCI) computing nodes and virtual network topologies.</li>
+              <li>Designed automated CI/CD pipeline workflows for continuous software integration and scalable deployments.</li>
+              <li>Managed and containerized application packages using Docker to ensure environment consistency across development and testing stages.</li>
+            </ul>
+            <div class="intern-tags">
+              <span>OCI / Cloud</span>
+              <span>Docker</span>
+              <span>CI/CD</span>
+              <span>DevOps</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Internship 2 -->
+        <div class="internship-row reveal">
+          <div class="intern-left">
+            <div class="intern-dot-container">
+              <span class="intern-dot"></span>
+            </div>
+            <div class="intern-meta">
+              <h3 class="intern-role">Web development Trainee</h3>
+              <div class="intern-company"><i class="fa-solid fa-building"></i> NICE computers</div>
+              <div class="intern-date"><i class="fa-regular fa-calendar"></i> Nov 2023 &ndash; Apr 2024</div>
+            </div>
+          </div>
+          <div class="intern-right">
+            <ul class="intern-bullets">
+              <li>Developed and enhanced multiple web interfaces with a focus on responsiveness and usability.</li>
+              <li>Contributed to the development of two web-based projects using modern frontend technologies.</li>
+              <li>Implemented interactive UI components and optimized user experiences across different devices.</li>
+            </ul>
+            <div class="intern-tags">
+              <span>HTML, CSS</span>
+              <span>JavaScript</span>
+              <span>Bootstrap</span>
+              <span>jQuery, DOM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-inner">
+      <p class="section-label reveal">Academic Journey</p>
+      <h2 class="section-title reveal">My <span>Education</span></h2>
+      <div class="exp-grid">
+        <div class="exp-card reveal" style="border-left:4px solid var(--accent-plum);transition-delay:0.05s">
+          <div class="exp-card-type" style="color:var(--accent-plum);"><i class="fa-solid fa-graduation-cap"></i>
+            Undergrad</div>
+          <h3>B.Tech in Computer Science &amp; Engineering</h3>
+          <div class="edu-meta">
+            <span><i class="fa-solid fa-building-columns"></i> DHANEKULA INSTITUTE OF ENGINEERING & TECHNOLOGY -
+              Vijayawada</span>
+            <span><i class="fa-regular fa-calendar"></i> 2024 &ndash; Present</span>
+            <span><i class="fa-solid fa-star"></i> CGPA: 8.4</span>
+          </div>
+          <p>Currently pursuing a degree focused on computer science fundamentals, artificial intelligence, and software
+            development, while actively engaging in coding activities and technical learning.</p>
+          <div class="exp-icon"><i class="fa-solid fa-university"></i></div>
+        </div>
+        <div class="exp-card reveal" style="border-left:4px solid var(--accent-plum);transition-delay:0.1s">
+          <div class="exp-card-type" style="color:var(--accent-plum);"><i class="fa-solid fa-school"></i> Diploma</div>
+          <h3>Diploma in Computer Science Engineering</h3>
+          <div class="edu-meta">
+            <span><i class="fa-solid fa-building-columns"></i> VKR &amp; VNB Polytechnic - Gudivada</span>
+            <span><i class="fa-regular fa-calendar"></i> 2021 &ndash; 2024</span>
+            <span><i class="fa-solid fa-star"></i> Percentage: 75.88%</span>
+          </div>
+          <p>Built a strong foundation in computer science, programming, and core software engineering concepts through
+            hands-on learning.</p>
+          <div class="exp-icon"><i class="fa-solid fa-book-open"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-inner">
+      <p class="section-label reveal">Achievements</p>
+      <h2 class="section-title reveal">Certifications &amp; <span>Learning</span></h2>
+      <div class="cert-grid">
+
+        <!-- Oracle Cloud (2025) -->
+        <div class="cert-card reveal" style="transition-delay:0.05s">
+          <div class="cert-thumb">
+            <img src="cert_oracle.png" alt="Oracle Cloud Foundations">
+            <span class="cert-thumb-badge" style="background:#333;color:white;">Cloud</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-body-header">
+              <h3 class="cert-title">Oracle Cloud Foundations Associate</h3>
+              <i class="fa-solid fa-bookmark cert-bookmark" style="color:var(--accent-plum);"></i>
+            </div>
+            <div class="cert-issuer">
+              <span class="issuer-pill" style="background:rgba(122,31,92,0.08);color:var(--accent-plum);"><i class="fa-solid fa-cloud"></i>
+                ORACLE University</span>
+              <span class="cert-year"> • 2025</span>
+            </div>
+            <p class="cert-desc">Gained knowledge of cloud concepts, OCI services, security, and pricing models.</p>
+            <div class="cert-footer">
+              <a href="javascript:void(0)" class="btn-view-cert" onclick="openCertModal('cert2')"><i
+                  class="fa-solid fa-expand"></i> View Details</a>
+              <a href="Oracle Cloud Infrastructure 2025 Certified Foundations Associate.pdf" target="_blank"
+                class="cert-link-verify">Verify <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Cloud (2025) -->
+        <div class="cert-card reveal" style="transition-delay:0.1s">
+          <div class="cert-thumb">
+            <img src="Applying AI Principles with Google Cloud.png" alt="Google Cloud Responsible AI">
+            <span class="cert-thumb-badge" style="background:#333;color:white;">AI</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-body-header">
+              <h3 class="cert-title">Google Cloud: Responsible AI</h3>
+              <i class="fa-solid fa-bookmark cert-bookmark" style="color:var(--accent-plum);"></i>
+            </div>
+            <div class="cert-issuer">
+              <span class="issuer-pill" style="background:rgba(122,31,92,0.08);color:var(--accent-plum);"><i class="fa-solid fa-cloud"></i>
+                Google Cloud</span>
+              <span class="cert-year"> • 2025</span>
+            </div>
+            <p class="cert-desc">Explored ethical AI principles including fairness, transparency, and responsible deployment.</p>
+            <div class="cert-footer">
+              <a href="javascript:void(0)" class="btn-view-cert" onclick="openCertModal('cert4')"><i
+                  class="fa-solid fa-expand"></i> View Details</a>
+              <a href="Applying AI Principles with Google Cloud.png" target="_blank" class="cert-link-verify">Verify <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Python Foundation (2024) -->
+        <div class="cert-card reveal" style="transition-delay:0.15s">
+          <div class="cert-thumb">
+            <img src="cert_python.png" alt="Python Foundation">
+            <span class="cert-thumb-badge" style="background:#333;color:white;">Programming</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-body-header">
+              <h3 class="cert-title">Python Foundation</h3>
+              <i class="fa-solid fa-bookmark cert-bookmark" style="color:var(--accent-plum);"></i>
+            </div>
+            <div class="cert-issuer">
+              <span class="issuer-pill" style="background:rgba(122,31,92,0.08);color:var(--accent-plum);"><i class="fa-solid fa-building"></i>
+                Infosys Springboard</span>
+              <span class="cert-year"> • 2024</span>
+            </div>
+            <p class="cert-desc">Learned core Python programming, data handling, and object-oriented concepts.</p>
+            <div class="cert-footer">
+              <a href="javascript:void(0)" class="btn-view-cert" onclick="openCertModal('cert1')"><i
+                  class="fa-solid fa-expand"></i> View Details</a>
+              <a href="python foundation certification.pdf" target="_blank" class="cert-link-verify">Verify <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Java Developer (2024) -->
+        <div class="cert-card reveal" style="transition-delay:0.2s">
+          <div class="cert-thumb">
+            <img src="cert_java.png" alt="Java Developer">
+            <span class="cert-thumb-badge" style="background:#333;color:white;">Programming</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-body-header">
+              <h3 class="cert-title">Java Developer Certification</h3>
+              <i class="fa-solid fa-bookmark cert-bookmark" style="color:var(--accent-plum);"></i>
+            </div>
+            <div class="cert-issuer">
+              <span class="issuer-pill" style="background:rgba(122,31,92,0.08);color:var(--accent-plum);"><i class="fa-solid fa-building"></i>
+                Infosys Springboard</span>
+              <span class="cert-year"> • 2024</span>
+            </div>
+            <p class="cert-desc">Fundamentals of Java programming and OOP concepts.</p>
+            <div class="cert-footer">
+              <a href="javascript:void(0)" class="btn-view-cert" onclick="openCertModal('cert3')"><i
+                  class="fa-solid fa-expand"></i> View Details</a>
+              <a href="java developer certification.pdf" target="_blank" class="cert-link-verify">Verify <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <div class="section-inner">
+      <p class="section-label reveal">Beyond Code</p>
+      <h2 class="section-title reveal">Activities &amp; <span>Experience</span></h2>
+      <div class="exp-grid">
+        <div class="exp-card reveal" style="border-left:4px solid var(--accent-plum);transition-delay:0.05s">
+          <div class="exp-card-type" style="color:var(--accent-plum);"><i class="fa-solid fa-trophy"></i> Hackathon
+          </div>
+          <h3>Smart India Hackathon - 2025</h3>
+          <p>- Collaborated with a team to design and develop an AI-based solution for a real-world problem<br>
+            - Worked on rapid prototyping, problem analysis, and presenting the solution<br>
+            - Gained hands-on experience in teamwork, time management, and innovation</p>
+          <div class="exp-icon"><i class="fa-solid fa-rocket"></i></div>
+        </div>
+        <div class="exp-card reveal" style="border-left:4px solid var(--accent-plum);transition-delay:0.1s">
+          <div class="exp-card-type" style="color:var(--accent-plum);"><i class="fa-solid fa-book-open"></i> Learnathon</div>
+          <h3>SAWIT.AI Learnathon - 2024</h3>
+          <p>- Completed the fundamentals of Generative AI under the SAWIT.AI program<br>
+            - Gained understanding of core AI, prompt engineering, and intelligent agents<br>
+            - Explored building real-world AI-driven solutions and applications</p>
+          <div class="exp-icon"><i class="fa-solid fa-brain"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label reveal">Say Hello</p>
+      <h2 class="section-title reveal">Let's <span>Connect</span></h2>
+      <div class="contact-grid">
+        <div class="reveal-left">
+          <div class="contact-info-block">
+            <h3>I'd love to hear from you</h3>
+            <p>I'm currently seeking internship and early-career opportunities in AI, Software Engineering, and Full-Stack Development. If you'd like to discuss a role, project, or collaboration, I'd love to connect.</p>
+            <div class="contact-availability">
+              <span class="dot"></span>
+              Open to collaborations &amp; internships
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/rayapalli-mounika" target="_blank" class="social-link">
+              <div class="social-icon" style="background:#E8F4FF;color:#0A66C2;"><i
+                  class="fa-brands fa-linkedin-in"></i></div>
+              <div class="social-text"><strong>LinkedIn</strong><span>Connect</span></div>
+              <i class="fa-solid fa-arrow-right social-arrow"></i>
+            </a>
+            <a href="https://unstop.com/u/Mounikarayapalli" target="_blank" class="social-link">
+              <div class="social-icon" style="background:#FFF0E8;color:#F0483E;"><i class="fa-solid fa-trophy"></i>
+              </div>
+              <div class="social-text"><strong>Unstop</strong><span>Profile</span></div>
+              <i class="fa-solid fa-arrow-right social-arrow"></i>
+            </a>
+            <a href="https://github.com/mounikarayapalli" target="_blank" class="social-link">
+              <div class="social-icon" style="background:#F0F0F0;color:#171515;"><i class="fa-brands fa-github"></i>
+              </div>
+              <div class="social-text"><strong>GitHub</strong><span>Repositories</span></div>
+              <i class="fa-solid fa-arrow-right social-arrow"></i>
+            </a>
+            <a href="mailto:rayapallymounika@gmail.com" class="social-link">
+              <div class="social-icon" style="background:#FFE8EE;color:#A53860;"><i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="social-text"><strong>Email</strong><span>Message me</span></div>
+              <i class="fa-solid fa-arrow-right social-arrow"></i>
+            </a>
+            
+          </div>
+        </div>
+        <div class="reveal-right">
+          <form class="contact-form" action="https://formsubmit.co/ajax/rayapallymounika@gmail.com" method="POST" onsubmit="event.preventDefault(); handleSubmit(this.querySelector('.form-submit'));">
+            <div class="contact-form-title"><i class="" style="color:var(--accent-rose);"></i>
+              Send a Message</div>
+            <div class="form-row">
+              <div class="form-group" style="margin-bottom:0">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Mounika" required>
+              </div>
+              <div class="form-group" style="margin-bottom:0">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="mounika@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" name="subject" placeholder="Let's collaborate!">
+            </div>
+            <div class="form-group">
+              <label>Your Message</label>
+              <textarea name="message" placeholder="Tell me about your project or idea..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Mounika<span>ka</span></div>
+      <p class="footer-tagline">Crafting impactful digital experiences — one line of code at a time.</p>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://linkedin.com/in/rayapalli-mounika" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/mounikarayapalli" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:rayapallymounika@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+
+      </div>
+      <p class="footer-copy"> · © 2026 Mounika · </p>
+    </div>
+  </footer>
+
+  <!-- RESUME MODAL -->
+  <div class="resume-modal-overlay" id="resumeModal" onclick="closeResumeModal(event)">
+    <div class="resume-modal-content" onclick="event.stopPropagation()">
+      <div class="resume-modal-header">
+        <h3><i class="fa-solid fa-file-lines"></i> Resume</h3>
+        <div class="resume-modal-actions">
+          <a href="resume.pdf" target="_blank" title="Open in New Tab" class="modal-btn"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a href="resume.pdf" download title="Download Resume" class="modal-btn"><i
+              class="fa-solid fa-download"></i></a>
+          <button onclick="closeResumeModal()" title="Close" class="modal-btn close-btn"><i
+              class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <iframe src="resume.pdf" title="Resume PDF Viewer"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT DETAIL MODAL -->
+  <div class="project-modal-overlay" id="projectDetailModal" onclick="closeProjectModal(event)">
+    <div class="project-modal-content" onclick="event.stopPropagation()">
+      <div class="pm-header">
+        <div class="pm-header-top">
+          <span class="pm-badge" id="pmBadge">AI</span>
+          <button onclick="closeProjectModal()" class="pm-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <h2 id="pmTitle">Project Title</h2>
+        <p id="pmShortDesc">Project short description...</p>
+
+        <div class="pm-tabs">
+          <button class="pm-tab active" onclick="switchPmTab('overview')">Overview</button>
+          <button class="pm-tab" onclick="switchPmTab('details')">Details</button>
+          <button class="pm-tab" onclick="switchPmTab('demo')">Live Demo</button>
+        </div>
+      </div>
+
+      <div class="pm-body-container">
+        <!-- Overview Tab -->
+        <div class="pm-body active" id="pmBodyOverview">
+          <div class="pm-grid">
+            <div class="pm-left">
+              <h3>Project Details</h3>
+              <div id="pmLongDesc" class="pm-desc-long">
+                Project long description...
+              </div>
+
+              <h3 class="pm-tech-title">Technologies</h3>
+              <div class="pm-tech-tags" id="pmTechTags">
+                <!-- Tech tags injected here -->
+              </div>
+
+              <div class="pm-actions">
+                <a href="#" id="pmLiveDemoBtn" class="pm-btn-primary" target="_blank"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                <a href="#" id="pmGithubBtn" class="pm-btn-secondary" target="_blank"><i
+                    class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+            <div class="pm-right">
+              <img id="pmImage" src="" alt="Project Image" class="pm-image">
+              <div class="pm-meta">
+                <span class="pm-meta-label">Category</span>
+                <strong id="pmCategory">Category</strong>
+              </div>
+              <div class="pm-meta">
+                <span class="pm-meta-label">Key Features</span>
+                <ul id="pmFeaturesList" class="pm-features-list">
+                  <!-- Features injected here -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details Tab -->
+        <div class="pm-body" id="pmBodyDetails">
+          <div class="pm-placeholder">
+            <i class="fa-solid fa-code"></i>
+            <h3>Technical Details</h3>
+            <p>Detailed architecture and implementation challenges will be documented here.</p>
+          </div>
+        </div>
+
+        <!-- Demo Tab -->
+        <div class="pm-body" id="pmBodyDemo">
+          <div class="pm-placeholder">
+            <i class="fa-solid fa-play"></i>
+            <h3>Live Demonstration</h3>
+            <p>Click the Live Demo button below to view the live project.</p>
+            <a href="#" id="pmDemoTabBtn" class="pm-btn-primary" target="_blank">Open Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE MODAL -->
+  <div class="project-modal-overlay" id="certModal" onclick="closeCertModal(event)">
+    <div class="project-modal-content" onclick="event.stopPropagation()" style="max-width: 800px;">
+      <div class="pm-header" style="border-bottom:none; padding-bottom: 0;">
+        <div class="pm-header-top">
+          <span class="pm-badge" id="cmBadge" style="background:var(--accent-plum);">Web Development</span>
+          <button onclick="closeCertModal()" class="pm-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <h2 id="cmTitle">Web Development with Python & Django</h2>
+        <p id="cmIssuerDate" style="color:var(--text-light); margin-bottom:15px; font-weight:600;">Connect Club &
+          CodeTantra • <i class="fa-regular fa-calendar"></i> 2025</p>
+      </div>
+
+      <div class="pm-body-container" style="padding: 10px 40px 40px; display:flex; justify-content:center;">
+        <img id="cmImage" src="" alt="Certificate"
+          style="width:100%; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

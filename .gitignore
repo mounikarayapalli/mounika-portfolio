@@ -1,0 +1,11 @@
+# Backup files
+*.bak
+*.tmp
+
+# VS Code directory (optional, but usually ignored)
+.vscode/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store

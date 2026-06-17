@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH DESIRE - Institute of Software & Hardware</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="header">
+        <div class="logo-section">
+            <!-- Sleek custom SVG logo representing education and technology -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"/>
+                <path d="M4.11 10.42V17c0 1.66 3.53 3 7.89 3s7.89-1.34 7.89-3v-6.58l-7.89 3.58-7.89-3.58z"/>
+            </svg>
+            <div class="brand-name">TECH DESIRE</div>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+                <li><a href="#courses" class="nav-link" id="nav-courses">Courses</a></li>
+                <li><a href="#success" class="nav-link" id="nav-success">Success Stories</a></li>
+                <li><a href="#about" class="nav-link" id="nav-about">About Us</a></li>
+                <li class="user-only hidden"><a href="#dashboard" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-actions">
+            <!-- Simulated Mail/Inbox icon with dynamic badge count -->
+            <div class="inbox-trigger" id="inboxBtn" onclick="openInbox()">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <div class="badge-dot" id="inboxBadge"></div>
+            </div>
+
+            <!-- Auth Buttons toggled via JS -->
+            <div id="guestAuth" class="auth-buttons">
+                <button class="btn-secondary" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-primary" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+            <div id="userAuth" class="auth-buttons hidden">
+                <button class="btn-secondary" onclick="logoutUser()">Log Out</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- VIEWS SECTION -->
+
+    <!-- Home View -->
+    <section id="view-home" class="view-section">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-subtitle">ISO Certified software & hardware school</div>
+                <h1 class="hero-title">Fuel Your <span>Tech Desires</span> to Reality</h1>
+                <p class="hero-description">Discover curated learning roadmaps, interact with expert syllabi, practice through structured quizzes, and unlock accredited certifications. Start learning today for free.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="navigateTo('courses')">Explore Courses</button>
+                    <button class="btn-secondary" onclick="navigateTo('about')">Learn About Us</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-glow"></div>
+                <!-- Inline SVG representing visual learning -->
+                <svg class="hero-illustration" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="250" cy="250" r="180" fill="url(#hero-circle-grad)" opacity="0.15"/>
+                    <rect x="120" y="150" width="260" height="180" rx="16" fill="#043e32" stroke="#10b981" stroke-width="4"/>
+                    <rect x="150" y="330" width="200" height="20" rx="4" fill="#022c22" stroke="#34d399" stroke-width="2"/>
+                    <path d="M220 350 L180 400 L320 400 L280 350 Z" fill="#050505" stroke="#10b981" stroke-width="2"/>
+                    <path d="M210 210 L310 240 L210 270 Z" fill="#10b981" filter="drop-shadow(0 0 8px #10b981)"/>
+                    <defs>
+                        <linearGradient id="hero-circle-grad" x1="250" y1="70" x2="250" y2="430" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#10b981"/>
+                            <stop offset="1" stop-color="#a7f3d0" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years of Directorship</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12+</div>
+                <div class="stat-label">Modern Subjects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,500+</div>
+                <div class="stat-label">Successful Graduates</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">ISO-Certified Quality</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Catalog View -->
+    <section id="view-courses" class="view-section hidden">
+        <div class="section-header">
+            <h2 class="section-title">Courses Available</h2>
+            <p class="section-subtitle">Unlock courses to study structured syllabuses, timeline roadmaps, chapter lectures, external references, and interactive quizzes.</p>
+        </div>
+
+        <div class="courses-container">
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Courses loaded dynamically via Javascript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories / Testimonials View -->
+    <section id="view-success" class="view-section hidden">
+        <div class="section-header">
+            <h2 class="section-title">Success Milestones</h2>
+            <p class="section-subtitle">Read how our former students achieved excellence in software development and advanced engineering under MNP Directorship.</p>
+        </div>
+
+        <div class="feedbacks-container">
+            <div class="feedback-card">
+                <img class="feedback-card-image" src="SM01.jpg" alt="Mounika R. Success">
+                <p class="feedback-text">TECH DESIRE built my programming core from scratch. The step-by-step roadmap for C and C++ made pointers and data structures so easy to grasp. I got hired as a Junior Systems Architect!</p>
+                <div class="feedback-user">
+                    <div class="feedback-info">
+                        <h4>Mounika R.</h4>
+                        <p>Systems Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-card">
+                <img class="feedback-card-image" src="SM02.jpg" alt="Ravi Kiran Success">
+                <p class="feedback-text">The database administration training (SQL, DBMS, Oracle) at Tech Desire was thoroughly practical. Today I manage relational structures for international e-commerce apps.</p>
+                <div class="feedback-user">
+                    <div class="feedback-info">
+                        <h4>Ravi Kiran</h4>
+                        <p>Lead Database Administrator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feedback-card">
+                <img class="feedback-card-image" src="SM03.jpg" alt="Spandana K. Success">
+                <p class="feedback-text">I enrolled in Java and Web Development packages. The hands-on project-building, DOM exercises, and HTML/CSS/JavaScript components were fantastic. Highly recommended!</p>
+                <div class="feedback-user">
+                    <div class="feedback-info">
+                        <h4>Spandana K.</h4>
+                        <p>Fullstack Engineer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Milestone Infinite Marquee -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <img src="SM01.jpg" alt="Milestone 1">
+                <img src="SM02.jpg" alt="Milestone 2">
+                <img src="SM03.jpg" alt="Milestone 3">
+                <img src="SM04.jpg" alt="Milestone 4">
+                <img src="SM05.jpg" alt="Milestone 5">
+                <img src="SM06.jpg" alt="Milestone 6">
+                <img src="SM07.jpg" alt="Milestone 7">
+                <!-- Duplicate for loop continuity -->
+                <img src="SM01.jpg" alt="Milestone 1">
+                <img src="SM02.jpg" alt="Milestone 2">
+                <img src="SM03.jpg" alt="Milestone 3">
+                <img src="SM04.jpg" alt="Milestone 4">
+                <img src="SM05.jpg" alt="Milestone 5">
+                <img src="SM06.jpg" alt="Milestone 6">
+                <img src="SM07.jpg" alt="Milestone 7">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section View -->
+    <section id="view-about" class="view-section hidden">
+        <div class="section-header">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-subtitle">Learn about our history, ISO certifications, and academic directorship.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-info-box">
+                <h3>MNP Institute</h3>
+                <p>Established on 23rd March 2010, Tech Desire (directed by Mounika Rayapalli) has been a leading pioneer in vocational software and hardware coaching.</p>
+                <p>We are a certified ISO education provider. We combine classic systems-level computer principles with modern web development frameworks to build balanced engineers.</p>
+                <p>Contact Us directly: <br><strong>Phone:</strong> 9900887766<br><strong>Email:</strong> techdesire@gmail.com</p>
+            </div>
+            <div class="about-features">
+                <div class="about-feature-card">
+                    <h4>Core Languages</h4>
+                    <p>In-depth coverage of C, C++, Java, and Python with detailed syntax testing.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Web Tech</h4>
+                    <p>Structured training in modern HTML5, CSS Grid/Flexbox, JavaScript, and dynamic frameworks.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Databases</h4>
+                    <p>Relational theory, SQL indexing, aggregation, normalization, and system schema design.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>System Fundamentals</h4>
+                    <p>Operating Systems (OS), Networks (CN), and relational database modeling (DBMS).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard View (User only) -->
+    <section id="view-dashboard" class="view-section hidden">
+        <div class="section-header">
+            <h2 class="section-title">User Dashboard</h2>
+            <p class="section-subtitle">Track your registered courses, review progress, collect earned certification credentials, and view gamified badges.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Sidebar -->
+            <div class="dashboard-sidebar">
+                <div class="profile-card">
+                    <div class="profile-avatar-wrapper">
+                        <div class="profile-avatar" id="dashAvatarBox">
+                            <!-- Rendered Dynamically -->
+                        </div>
+                    </div>
+                    <div class="profile-name" id="dashUsername">Student</div>
+                    <div class="profile-email" id="dashEmail">student@techdesire.com</div>
+                    <div class="profile-points-container">
+                        <div class="points-label">Total Points</div>
+                        <div class="points-val" id="dashPoints">0</div>
+                        <div class="level-indicator" id="dashLevel">Level 1 (Beginner)</div>
+                    </div>
+                </div>
+
+                <div class="badge-vault-card">
+                    <div class="badge-vault-title">Badges Vault</div>
+                    <div class="badges-grid" id="badgesGrid">
+                        <!-- Badges loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Panel -->
+            <div class="dashboard-main">
+                <div>
+                    <h3 class="dashboard-section-title">Enrolled Courses</h3>
+                    <div class="enrolled-grid" id="enrolledGrid">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <h3 class="dashboard-section-title">Accredited Certifications</h3>
+                    <div class="certificates-grid" id="certsGrid">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Hub View (User enrolled in a course only) -->
+    <section id="view-learning-hub" class="view-section hidden">
+        <div id="hubNotice"></div>
+        <div class="hub-layout">
+            <!-- Hub Sidebar menu -->
+            <aside class="hub-sidebar">
+                <div class="hub-sidebar-title" id="hubCourseName">Course Hub</div>
+                <ul class="hub-menu-list">
+                    <li class="hub-menu-item active" id="hubMenuSyllabus" onclick="switchHubTab('syllabus')">
+                        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0-2-.9-2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
+                        Course Syllabus
+                    </li>
+                    <li class="hub-menu-item" id="hubMenuPath" onclick="switchHubTab('path')">
+                        <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9c-.39-.39-1.02-.39-1.41 0l-9 9c-.39.39-.39 1.02 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9c.39-.38.39-1.01 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5L18 11l-4 3.5z"/></svg>
+                        Learning Path
+                    </li>
+                    <li class="hub-menu-item" id="hubMenuContent" onclick="switchHubTab('content')">
+                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v2.81c0 1.94 3.13 3.51 7 3.51s7-1.57 7-3.51v-2.81l-7 3.82-7-3.82z"/></svg>
+                        Study & Quizzes
+                    </li>
+                    <li class="hub-menu-item" id="hubMenuStatus" onclick="switchHubTab('status')">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.47 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                        Credentials Status
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Hub Panels display -->
+            <main class="hub-main-panel">
+                <!-- Syllabus Panel -->
+                <div id="hubPanelSyllabus" class="hub-panel-section active">
+                    <div class="hub-title-row">
+                        <h2>Syllabus Lecture Topics</h2>
+                    </div>
+                    <p style="margin-bottom: 25px; color: var(--text-secondary);">Click on any topic link to open the lecture text, watch class videos, and answer the topic-specific checks.</p>
+                    <div class="syllabus-list" id="hubSyllabusList">
+                        <!-- Loaded dynamically as clickable links -->
+                    </div>
+                </div>
+
+                <!-- Learning Path Panel -->
+                <div id="hubPanelPath" class="hub-panel-section">
+                    <div class="hub-title-row">
+                        <h2>Syllabus Learning Roadmap</h2>
+                    </div>
+                    <div class="timeline" id="hubTimeline">
+                        <!-- Timeline milestones loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Study Content Panel -->
+                <div id="hubPanelContent" class="hub-panel-section">
+                    <div class="hub-title-row">
+                        <h2 id="contentHeader">Chapter 1</h2>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn-secondary" id="contentPrevBtn" onclick="navigateContent(-1)">Prev Unit</button>
+                            <button class="btn-primary" id="contentNextBtn" onclick="navigateContent(1)">Next Unit</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="content-chapter-title" id="contentSubhead">Lecture Unit</div>
+                        <div class="content-body" id="contentLectureText">Loading lecture text...</div>
+                        
+                        <h4 style="margin-top: 30px; margin-bottom:10px; font-family: var(--font-heading); color: var(--white);">Reference Class Video:</h4>
+                        <div class="video-container">
+                            <iframe id="contentVideoIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Embedded Topic specific quiz -->
+                        <div class="topic-quiz-box" id="topicQuizContainer">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Credentials Status Panel -->
+                <div id="hubPanelStatus" class="hub-panel-section">
+                    <div class="hub-title-row">
+                        <h2>Course Completion Status</h2>
+                    </div>
+                    <div id="courseCompletionPanel">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>TECH DESIRE</h2>
+                <p>ISO-Certified institute of premium software & hardware training. Accelerating software engineers since March 2010.</p>
+                <p><strong>Director:</strong> Mounika Rayapalli</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#home" onclick="navigateTo('home')">Home Page</a></li>
+                    <li><a href="#courses" onclick="navigateTo('courses')">Available Courses</a></li>
+                    <li><a href="#success" onclick="navigateTo('success')">Success Feedbacks</a></li>
+                    <li><a href="#about" onclick="navigateTo('about')">About MNP Institute</a></li>
+                </ul>
+            </div>
+            <div class="footer-request">
+                <h3>Submit General Request</h3>
+                <p>Submit form details below to route inquiries directly to MNP directorship email.</p>
+                <form class="footer-form" onsubmit="handleGeneralRequest(event)">
+                    <!-- Formsubmit configurations -->
+                    <input type="email" placeholder="Your Email Address" required id="reqEmail" name="email">
+                    <textarea placeholder="Write your course request or general inquiry details..." rows="3" required id="reqMsg" name="message"></textarea>
+                    <button class="btn-primary" type="submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Tech Desire. ISO-9001 Certified. All rights reserved. Directed by Mounika Rayapalli.
+        </div>
+    </footer>
+
+    <!-- TOAST POPUP SYSTEM -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- MODAL POPUPS -->
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            <h2 class="modal-title">Sign In</h2>
+            <div id="loginError" class="alert-card hidden"></div>
+            <form onsubmit="handleLoginSubmit(event)">
+                <div class="form-group">
+                    <label for="loginUname">Username</label>
+                    <input type="text" id="loginUname" required placeholder="Enter username...">
+                </div>
+                <div class="form-group">
+                    <label for="loginPwd">Password</label>
+                    <input type="password" id="loginPwd" required placeholder="Enter password...">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Login</button>
+            </form>
+            <div class="modal-footer-text">
+                Need an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign Up Here</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
+            <h2 class="modal-title">Create Account</h2>
+            <div id="signupError" class="alert-card hidden"></div>
+            <form onsubmit="handleSignupSubmit(event)">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="signupUname">Choose Username</label>
+                    <input type="text" id="signupUname" required placeholder="Select username...">
+                </div>
+                <div class="form-group">
+                    <label for="signupPwd">Choose Password</label>
+                    <input type="password" id="signupPwd" required placeholder="Create password...">
+                </div>
+                
+                <!-- Avatar selection grid -->
+                <div class="form-group">
+                    <label>Select Student Avatar</label>
+                    <div class="avatar-select-grid">
+                        <div class="avatar-select-option selected" id="opt_avatar_cap" onclick="selectSignupAvatar('cap')">
+                            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v2.81c0 1.94 3.13 3.51 7 3.51s7-1.57 7-3.51v-2.81l-7 3.82-7-3.82z"/></svg>
+                        </div>
+                        <div class="avatar-select-option" id="opt_avatar_code" onclick="selectSignupAvatar('code')">
+                            <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                        </div>
+                        <div class="avatar-select-option" id="opt_avatar_gear" onclick="selectSignupAvatar('gear')">
+                            <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                        </div>
+                        <div class="avatar-select-option" id="opt_avatar_atom" onclick="selectSignupAvatar('atom')">
+                            <svg viewBox="0 0 24 24"><path d="M12 2c-.55 0-1 .45-1 1v2.06c-1.55.22-3 .92-4.18 1.98L5.36 5.6c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l1.44 1.44C4.33 9.63 3.63 11.08 3.41 12.63H1c-.55 0-1 .45-1 1s.45 1 1 1h2.41c.22 1.55.92 3 1.98 4.18L3.95 20.25c-.39.39-.39 1.02 0 1.41s1.02.39 1.41 0l1.44-1.44c1.18 1.06 2.63 1.76 4.18 1.98V24c0 .55.45 1 1 1s1-.45 1-1v-2.06c1.55-.22 3-.92 4.18-1.98l1.44 1.44c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-1.44-1.44c1.06-1.18 1.76-2.63 1.98-4.18H23c.55 0 1-.45 1-1s-.45-1-1-1h-2.41c-.22-1.55-.92-3-1.98-4.18l1.44-1.44c.39-.39.39-1.02 0-1.41s-1.02-.39-1.41 0l-1.44 1.44c-1.18-1.06-2.63-1.76-4.18-1.98V3c0-.55-.45-1-1-1zM12 8c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4z"/></svg>
+                        </div>
+                    </div>
+                    <input type="hidden" id="signupAvatarValue" value="cap">
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Sign Up</button>
+            </form>
+            <div class="modal-footer-text">
+                Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login Here</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Client Inbox Modal -->
+    <div class="modal-overlay" id="inboxModal">
+        <div class="modal-card email-client-modal">
+            <button class="modal-close" onclick="closeModal('inboxModal')">&times;</button>
+            <h2 class="modal-title" style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Simulated Email Client</h2>
+            
+            <div class="email-inbox-layout">
+                <aside class="email-sidebar" id="emailSidebar">
+                    <!-- Mail list loaded dynamically -->
+                </aside>
+                <main class="email-body-panel" id="emailBodyPanel">
+                    <div class="no-emails-msg">No mail messages. Complete tasks or sign up to trigger notices!</div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Mockup View Modal -->
+    <div class="modal-overlay" id="certModal">
+        <div class="modal-card" style="max-width: 700px; padding: 25px;">
+            <button class="modal-close" onclick="closeModal('certModal')">&times;</button>
+            <div class="certificate-preview-container">
+                <div class="certificate-mockup" id="certificateContent">
+                    <!-- Dynamic details replaced on display -->
+                    <div class="cert-border-inset">
+                        <div class="cert-title">Tech Desire</div>
+                        <div class="cert-sub">ISO-9001 Certified Educational Credential</div>
+                        <div class="cert-body-text">
+                            This officially certifies that academic learner
+                            <br>
+                            <span class="cert-user-name" id="certUserName">Student Learner</span>
+                            <br>
+                            has successfully finished and achieved passing marks in the curriculum of
+                            <br>
+                            <span class="cert-course-name" id="certCourseName">Advanced Coursework</span>
+                            <br>
+                            satisfying all requirements, examinations, and project benchmarks.
+                        </div>
+                        <div class="cert-badge-gold"></div>
+                        <div class="cert-signatures">
+                            <div class="cert-sig-block">
+                                <div class="cert-sig-value">M. Rayapalli</div>
+                                <div class="cert-sig-line">Director Signatory</div>
+                            </div>
+                            <div class="cert-sig-block">
+                                <div class="cert-sig-value" id="certDateValue">03 June 2026</div>
+                                <div class="cert-sig-line">Date of Award</div>
+                            </div>
+                        </div>
+                        <div class="cert-id-label" id="certIdValue">ID: TD-CN-12948</div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 15px;">
+                <button class="btn-primary" onclick="printCertificate()">Print Credentials</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SPA LOGIC ENGINE -->
+    <script src="courses.js"></script>
+    <script>
+        // AVATARS SVG REPOSITORY
+        const AVATAR_SVGS = {
+            cap: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v2.81c0 1.94 3.13 3.51 7 3.51s7-1.57 7-3.51v-2.81l-7 3.82-7-3.82z"/></svg>`,
+            code: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>`,
+            gear: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>`,
+            atom: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c-.55 0-1 .45-1 1v2.06c-1.55.22-3 .92-4.18 1.98L5.36 5.6c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l1.44 1.44C4.33 9.63 3.63 11.08 3.41 12.63H1c-.55 0-1 .45-1 1s.45 1 1 1h2.41c.22 1.55.92 3 1.98 4.18L3.95 20.25c-.39.39-.39 1.02 0 1.41s1.02.39 1.41 0l1.44-1.44c1.18 1.06 2.63 1.76 4.18 1.98V24c0 .55.45 1 1 1s1-.45 1-1v-2.06c1.55-.22 3-.92 4.18-1.98l1.44 1.44c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-1.44-1.44c1.06-1.18 1.76-2.63 1.98-4.18H23c.55 0 1-.45 1-1s-.45-1-1-1h-2.41c-.22-1.55-.92-3-1.98-4.18l1.44-1.44c.39-.39.39-1.02 0-1.41s-1.02-.39-1.41 0l-1.44 1.44c-1.18-1.06-2.63-1.76-4.18-1.98V3c0-.55-.45-1-1-1zM12 8c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4z"/></svg>`
+        };
+
+        // GLOBAL APPLICATION STATE
+        let appState = {
+            currentUser: null,       // Stores logged-in user object
+            activeView: 'home',      // Current page view
+            hubCourseId: null,      // Active course in the learning hub
+            hubActiveTab: 'syllabus', // Active tab in learning hub
+            contentIndex: 0,        // Active chapter index inside hub content tab
+            selectedTopicAnswers: {} // Current topic quiz choices {q0: ans0, q1: ans1}
+        };
+
+        // INITIALIZATION ACTIONS ON WINDOW LOAD
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSession();
+            renderCoursesGrid();
+            handleHashNavigation();
+            updateInboxDot();
+
+            // Intercept link clicks to enable SPA page transitions
+            window.addEventListener('hashchange', handleHashNavigation);
+        });
+
+        // SESSION STATE STORAGE ACTIONS
+        function saveSession() {
+            if (appState.currentUser) {
+                let users = JSON.parse(localStorage.getItem('tech_users') || '[]');
+                const idx = users.findIndex(u => u.uname.toLowerCase() === appState.currentUser.uname.toLowerCase());
+                if (idx !== -1) {
+                    users[idx] = appState.currentUser;
+                } else {
+                    users.push(appState.currentUser);
+                }
+                localStorage.setItem('tech_users', JSON.stringify(users));
+                localStorage.setItem('tech_session', JSON.stringify(appState.currentUser.uname));
+            } else {
+                localStorage.removeItem('tech_session');
+            }
+        }
+
+        function loadSession() {
+            let users = JSON.parse(localStorage.getItem('tech_users') || '[]');
+            const hasBase = users.some(u => u.uname.toLowerCase() === 'techdesire');
+            if (!hasBase) {
+                users.push({
+                    name: "Tech Desire Admin",
+                    email: "techdesire@gmail.com",
+                    uname: "techdesire",
+                    password: "tech123",
+                    enrolled: [],
+                    completed: [],
+                    points: 0,
+                    avatar: "cap",
+                    syllabusChecks: {}, // { courseId: [false, false, false, false, false] }
+                    emails: [
+                        {
+                            subject: "Welcome to TECH DESIRE!",
+                            date: new Date().toLocaleDateString() + " 12:00 PM",
+                            sender: "MNP Administrative Office",
+                            body: "Dear Admin,\n\nWelcome back to your Tech Desire directorship panel.\n\nHere you can test enrollment flows, complete quizzes, and verify generated certifications.\n\nBest wishes,\nMNP Coordination Staff"
+                        }
+                    ]
+                });
+                localStorage.setItem('tech_users', JSON.stringify(users));
+            }
+
+            const sessionUname = localStorage.getItem('tech_session');
+            if (sessionUname) {
+                const user = users.find(u => u.uname.toLowerCase() === JSON.parse(sessionUname).toLowerCase());
+                if (user) {
+                    appState.currentUser = user;
+                    toggleAuthUI(true);
+                    updateDashboardUI();
+                }
+            } else {
+                toggleAuthUI(false);
+            }
+        }
+
+        // SPA NAVIGATION ROUTER
+        function handleHashNavigation() {
+            let hash = window.location.hash.substring(1) || 'home';
+            let parsedView = hash;
+            
+            if (hash.startsWith('learning-hub/')) {
+                const courseId = hash.split('/')[1];
+                if (checkCourseHubAccess(courseId)) {
+                    appState.hubCourseId = courseId;
+                    parsedView = 'learning-hub';
+                } else {
+                    window.location.hash = '#courses';
+                    return;
+                }
+            }
+
+            if (parsedView === 'dashboard' && !appState.currentUser) {
+                showToast("Authentication Required", "Please log in or sign up to view your dashboard.", "error");
+                window.location.hash = '#home';
+                return;
+            }
+
+            switchView(parsedView);
+        }
+
+        function switchView(viewId) {
+            appState.activeView = viewId;
+
+            // Update navbar menu links styling
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.getElementById(`nav-${viewId}`);
+            if (activeLink) activeLink.classList.add('active');
+
+            // Hide all views
+            document.querySelectorAll('.view-section').forEach(sec => {
+                sec.classList.add('hidden');
+            });
+
+            // Display target view
+            const targetSec = document.getElementById(`view-${viewId}`);
+            if (targetSec) {
+                targetSec.classList.remove('hidden');
+            } else {
+                document.getElementById('view-home').classList.remove('hidden');
+            }
+
+            // View initializers
+            if (viewId === 'courses') {
+                renderCoursesGrid();
+            } else if (viewId === 'dashboard') {
+                updateDashboardUI();
+            } else if (viewId === 'learning-hub') {
+                loadLearningHub();
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function navigateTo(viewId) {
+            window.location.hash = `#${viewId}`;
+        }
+
+        // DYNAMIC RENDERING CATALOGUE
+        function renderCoursesGrid() {
+            const grid = document.getElementById('coursesGrid');
+            grid.innerHTML = '';
+
+            Object.keys(COURSES_DATABASE).forEach(id => {
+                const course = COURSES_DATABASE[id];
+                const isEnrolled = appState.currentUser && appState.currentUser.enrolled.includes(id);
+                const isCompleted = appState.currentUser && appState.currentUser.completed.includes(id);
+
+                let cardButton = '';
+                if (isCompleted) {
+                    cardButton = `<button class="btn-secondary learn-btn" onclick="openCourseHub('${id}')">Passed (Review Hub)</button>`;
+                } else if (isEnrolled) {
+                    cardButton = `<button class="btn-primary learn-btn" onclick="openCourseHub('${id}')">Continue Studies</button>`;
+                } else {
+                    cardButton = `<button class="btn-primary enroll-btn" onclick="enrollCourse('${id}')">Register & Enroll</button>`;
+                }
+
+                let coverImg = '';
+                if (course.img === 'svg-placeholder') {
+                    coverImg = `
+                    <div style="background:var(--bg-secondary); width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; border-bottom:1px solid var(--glass-border);">
+                        <span style="font-size:45px;">${course.icon}</span>
+                        <span style="font-size:12px; font-weight:700; color:var(--accent-pastel); text-transform:uppercase; margin-top:5px;">${id.toUpperCase()} Core</span>
+                    </div>`;
+                } else {
+                    coverImg = `<img class="course-card-img" src="${course.img}" alt="${course.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none; background:var(--bg-secondary); width:100%; height:100%; flex-direction:column; align-items:center; justify-content:center; border-bottom:1px solid var(--glass-border);">
+                        <span style="font-size:45px;">${course.icon}</span>
+                        <span style="font-size:12px; font-weight:700; color:var(--accent-pastel); text-transform:uppercase; margin-top:5px;">${id.toUpperCase()} Core</span>
+                    </div>`;
+                }
+
+                const cardHtml = `
+                    <div class="course-card">
+                        <div class="course-card-img-wrapper">
+                            ${coverImg}
+                            <span class="course-badge">${id.toUpperCase()}</span>
+                        </div>
+                        <div class="course-card-body">
+                            <h3 class="course-card-title">${course.name}</h3>
+                            <p class="course-card-desc">${course.desc}</p>
+                            <div class="course-card-footer">
+                                <div class="course-meta">
+                                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.3 14.3L11 12.8V7h1.5v4.9l3.8 2.2-.8 1.2z"/></svg>
+                                    <span>5 Lessons</span>
+                                </div>
+                                <div class="course-meta">
+                                    <svg viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
+                                    <span>Topic Quizzes</span>
+                                </div>
+                            </div>
+                            ${cardButton}
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        }
+
+        // USER SIGNUP AVATAR ACTIONS
+        function selectSignupAvatar(avatarId) {
+            document.querySelectorAll('.avatar-select-option').forEach(el => {
+                el.classList.remove('selected');
+            });
+            document.getElementById(`opt_avatar_${avatarId}`).classList.add('selected');
+            document.getElementById('signupAvatarValue').value = avatarId;
+        }
+
+        // USER AUTHENTICATION ACTIONS
+        function handleLoginSubmit(event) {
+            event.preventDefault();
+            const uname = document.getElementById('loginUname').value.trim();
+            const pwd = document.getElementById('loginPwd').value.trim();
+            const errBox = document.getElementById('loginError');
+
+            let users = JSON.parse(localStorage.getItem('tech_users') || '[]');
+            const user = users.find(u => u.uname.toLowerCase() === uname.toLowerCase() && u.password === pwd);
+
+            if (user) {
+                appState.currentUser = user;
+                saveSession();
+                toggleAuthUI(true);
+                
+                // Clear forms
+                document.getElementById('loginUname').value = '';
+                document.getElementById('loginPwd').value = '';
+
+                closeModal('loginModal');
+                showToast("Welcome Back!", `Successfully signed in as ${user.name}.`, "success");
+                updateDashboardUI();
+                navigateTo('dashboard');
+            } else {
+                errBox.innerText = "Invalid credentials. Please verify your details.";
+                errBox.classList.remove('hidden');
+            }
+        }
+
+        function handleSignupSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value.trim();
+            const email = document.getElementById('signupEmail').value.trim();
+            const uname = document.getElementById('signupUname').value.trim();
+            const pwd = document.getElementById('signupPwd').value.trim();
+            const avatar = document.getElementById('signupAvatarValue').value;
+            const errBox = document.getElementById('signupError');
+
+            let users = JSON.parse(localStorage.getItem('tech_users') || '[]');
+            const exists = users.some(u => u.uname.toLowerCase() === uname.toLowerCase() || u.email.toLowerCase() === email.toLowerCase());
+
+            if (exists) {
+                errBox.innerText = "Username or Email address already registered.";
+                errBox.classList.remove('hidden');
+                return;
+            }
+
+            const newUser = {
+                name: name,
+                email: email,
+                uname: uname,
+                password: pwd,
+                enrolled: [],
+                completed: [],
+                points: 100, // 100 starting bonus points
+                avatar: avatar,
+                syllabusChecks: {}, // { courseId: [false, false, false, false, false] }
+                emails: [
+                    {
+                        subject: "Welcome to Tech Desire! Account Activated",
+                        date: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+                        sender: "MNP Directorship Office",
+                        body: `Dear ${name},\n\nCongratulations! Your academic account at Tech Desire has been successfully created.\n\nWe have awarded you 100 Profile Points as a registration bonus.\n\nYou now have unlimited access to course catalogs, interactive syllabuses, timeline roadmaps, and quizzes. Earn 4/5 marks in any course quiz to receive your ISO-certified Completion Certificate!\n\nIf you have any questions, feel free to submit inquiries directly in the website footer.\n\nBest regards,\nMounika Rayapalli\nDirector, Tech Desire Institute`
+                    }
+                ]
+            };
+
+            users.push(newUser);
+            localStorage.setItem('tech_users', JSON.stringify(users));
+
+            appState.currentUser = newUser;
+            saveSession();
+            toggleAuthUI(true);
+
+            // Clear inputs
+            document.getElementById('signupName').value = '';
+            document.getElementById('signupEmail').value = '';
+            document.getElementById('signupUname').value = '';
+            document.getElementById('signupPwd').value = '';
+            selectSignupAvatar('cap'); // reset avatar selection
+
+            closeModal('signupModal');
+            showToast("Welcome!", `Account created! Earned 100 Points! Check your Inbox.`, "success");
+            updateDashboardUI();
+            navigateTo('dashboard');
+        }
+
+        function logoutUser() {
+            showToast("Signed Out", "You have logged out of your session.", "success");
+            appState.currentUser = null;
+            saveSession();
+            toggleAuthUI(false);
+            navigateTo('home');
+        }
+
+        function toggleAuthUI(isLoggedIn) {
+            const guestActions = document.getElementById('guestAuth');
+            const userActions = document.getElementById('userAuth');
+            const userLinks = document.querySelectorAll('.user-only');
+
+            if (isLoggedIn) {
+                guestActions.classList.add('hidden');
+                userActions.classList.remove('hidden');
+                userLinks.forEach(el => el.classList.remove('hidden'));
+            } else {
+                guestActions.classList.remove('hidden');
+                userActions.classList.add('hidden');
+                userLinks.forEach(el => el.classList.add('hidden'));
+            }
+            updateInboxDot();
+        }
+
+        // MODAL ROUTER HANDLERS
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            if (modalId === 'loginModal') {
+                document.getElementById('loginError').classList.add('hidden');
+            } else if (modalId === 'signupModal') {
+                document.getElementById('signupError').classList.add('hidden');
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        function switchModal(closeId, openId) {
+            closeModal(closeId);
+            setTimeout(() => openModal(openId), 150);
+        }
+
+        // TOAST NOTIFICATIONS TRIGGER
+        function showToast(title, text, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const id = 'toast_' + Math.random().toString(36).substr(2, 9);
+
+            const iconSvg = type === 'success' ? 
+                `<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>` : 
+                `<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.47 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>`;
+
+            const html = `
+                <div class="toast-msg" id="${id}">
+                    <div class="toast-icon">${iconSvg}</div>
+                    <div class="toast-details">
+                        <h4>${title}</h4>
+                        <p>${text}</p>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+
+            setTimeout(() => {
+                const toast = document.getElementById(id);
+                if (toast) {
+                    toast.classList.add('hide');
+                    setTimeout(() => toast.remove(), 300);
+                }
+            }, 4000);
+        }
+
+        // SIMULATED INBOX / EMAIL MODULE
+        function openInbox() {
+            if (!appState.currentUser) {
+                showToast("Inbox Restricted", "Please sign up or log in to view your notification email client.", "error");
+                openModal('loginModal');
+                return;
+            }
+            renderInbox();
+            openModal('inboxModal');
+        }
+
+        function renderInbox() {
+            const sidebar = document.getElementById('emailSidebar');
+            const bodyPanel = document.getElementById('emailBodyPanel');
+            sidebar.innerHTML = '';
+
+            const emails = appState.currentUser.emails || [];
+
+            if (emails.length === 0) {
+                sidebar.innerHTML = `<div style="text-align:center; padding:20px; font-size:12px; color:var(--text-secondary);">No messages</div>`;
+                bodyPanel.innerHTML = `<div class="no-emails-msg">No mail messages. Complete tasks or sign up to trigger notices!</div>`;
+                return;
+            }
+
+            emails.forEach((mail, idx) => {
+                const mailItem = `
+                    <div class="email-item" id="emailItem_${idx}" onclick="selectEmail(${idx})">
+                        <div class="email-item-subject">${mail.subject}</div>
+                        <div class="email-item-date">${mail.date}</div>
+                    </div>
+                `;
+                sidebar.insertAdjacentHTML('beforeend', mailItem);
+            });
+
+            selectEmail(0);
+        }
+
+        function selectEmail(idx) {
+            document.querySelectorAll('.email-item').forEach(el => el.classList.remove('active'));
+            const activeItem = document.getElementById(`emailItem_${idx}`);
+            if (activeItem) activeItem.classList.add('active');
+
+            const email = appState.currentUser.emails[idx];
+            const bodyPanel = document.getElementById('emailBodyPanel');
+
+            bodyPanel.innerHTML = `
+                <div class="email-header-info">
+                    <div class="email-subject-line">${email.subject}</div>
+                    <div class="email-meta-line">From: <span>${email.sender}</span></div>
+                    <div class="email-meta-line">Date: ${email.date}</div>
+                </div>
+                <pre class="email-content-text">${email.body}</pre>
+            `;
+
+            if (appState.currentUser.unreadEmails) {
+                appState.currentUser.unreadEmails = false;
+                saveSession();
+                updateInboxDot();
+            }
+        }
+
+        function sendSimulatedEmail(subject, bodyText) {
+            if (!appState.currentUser) return;
+
+            const newEmail = {
+                subject: subject,
+                date: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+                sender: "MNP Course Coordinator Office",
+                body: bodyText
+            };
+
+            appState.currentUser.emails.unshift(newEmail);
+            appState.currentUser.unreadEmails = true;
+            saveSession();
+            updateInboxDot();
+
+            showToast("New Notification Email Received", subject, "success");
+        }
+
+        function updateInboxDot() {
+            const badge = document.getElementById('inboxBadge');
+            if (appState.currentUser && appState.currentUser.unreadEmails) {
+                badge.style.display = 'block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        // ENROLLMENT & HUB ACCESS CONTROLS
+        function enrollCourse(courseId) {
+            if (!appState.currentUser) {
+                showToast("Login Required", "To enroll in a course, please log in or create an account first.", "error");
+                openModal('signupModal');
+                return;
+            }
+
+            if (appState.currentUser.enrolled.includes(courseId)) {
+                openCourseHub(courseId);
+                return;
+            }
+
+            // Enroll user
+            appState.currentUser.enrolled.push(courseId);
+            appState.currentUser.points += 50; 
+            
+            // Build syllabus checklist tracking for this course
+            if (!appState.currentUser.syllabusChecks) {
+                appState.currentUser.syllabusChecks = {};
+            }
+            appState.currentUser.syllabusChecks[courseId] = [false, false, false, false, false]; 
+
+            saveSession();
+            showToast("Enrolled Successfully", `Registered for ${COURSES_DATABASE[courseId].name}! +50 Points.`, "success");
+
+            // Dispatch welcome confirmation email
+            const courseName = COURSES_DATABASE[courseId].name;
+            const welcomeText = `Dear ${appState.currentUser.name},\n\nWelcome to ${courseName} at Tech Desire.\n\nYour enrollment registration has been processed successfully!\n\nThis course consists of 5 academic lecture units, a timeline path structure, and a topic-specific quiz for each chapter. You can access these modules inside the Learning Hub from your User Dashboard.\n\nHappy coding!\n\nBest regards,\nMounika Rayapalli\nDirector, Tech Desire Institute`;
+            sendSimulatedEmail(`Confirmation: Enrolled in ${courseName}`, welcomeText);
+
+            openCourseHub(courseId);
+        }
+
+        function checkCourseHubAccess(courseId) {
+            if (!appState.currentUser) return false;
+            return appState.currentUser.enrolled.includes(courseId);
+        }
+
+        function openCourseHub(courseId) {
+            navigateTo(`learning-hub/${courseId}`);
+        }
+
+        // USER DASHBOARD UI HANDLER
+        function updateDashboardUI() {
+            if (!appState.currentUser) return;
+
+            document.getElementById('dashUsername').innerText = appState.currentUser.name;
+            document.getElementById('dashEmail').innerText = appState.currentUser.email;
+            document.getElementById('dashPoints').innerText = appState.currentUser.points;
+
+            // Load profile avatar SVG based on selection
+            const avatarKey = appState.currentUser.avatar || 'cap';
+            document.getElementById('dashAvatarBox').innerHTML = AVATAR_SVGS[avatarKey];
+
+            // Determine level based on points
+            const pts = appState.currentUser.points;
+            let levelStr = 'Level 1 (Novice Learner)';
+            if (pts >= 600) {
+                levelStr = 'Level 4 (Elite Engineer) 🏆';
+            } else if (pts >= 400) {
+                levelStr = 'Level 3 (Advanced Developer) 🌟';
+            } else if (pts >= 200) {
+                levelStr = 'Level 2 (Active Scholar) ⚡';
+            }
+            document.getElementById('dashLevel').innerText = levelStr;
+
+            // Load enrolled progress cards
+            const enrolledGrid = document.getElementById('enrolledGrid');
+            enrolledGrid.innerHTML = '';
+
+            if (appState.currentUser.enrolled.length === 0) {
+                enrolledGrid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align:center; padding:30px; background:var(--glass-bg); border-radius:12px; border:1px dashed var(--glass-border);">
+                        <p style="color:var(--text-secondary);">You are not registered in any course studies.</p>
+                        <button class="btn-primary" onclick="navigateTo('courses')" style="margin-top:10px;">Explore Course Catalog</button>
+                    </div>`;
+            } else {
+                appState.currentUser.enrolled.forEach(id => {
+                    const course = COURSES_DATABASE[id];
+                    const isPassed = appState.currentUser.completed.includes(id);
+
+                    // Compute completion based on checks
+                    const checks = appState.currentUser.syllabusChecks ? (appState.currentUser.syllabusChecks[id] || [false, false, false, false, false]) : [false, false, false, false, false];
+                    const completedChecks = checks.filter(c => c).length;
+                    
+                    let percent = Math.round((completedChecks / 5) * 100);
+                    if (isPassed) percent = 100;
+
+                    const enrolledCardHtml = `
+                        <div class="enrolled-card">
+                            <div class="enrolled-header">
+                                <div class="enrolled-title">${course.name}</div>
+                                <span style="font-size:18px;">${course.icon}</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-header">
+                                    <span>Course Progress</span>
+                                    <span>${percent}%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="width: ${percent}%;"></div>
+                                </div>
+                            </div>
+                            <div class="enrolled-actions">
+                                <span style="font-size:11px; font-weight:700; color:${isPassed ? 'var(--accent-mint)' : 'var(--text-secondary)'}; text-transform:uppercase;">
+                                    ${isPassed ? 'Verified Passed' : 'Active Studies'}
+                                </span>
+                                <button class="btn-secondary" style="padding:6px 12px; font-size:12px;" onclick="openCourseHub('${id}')">
+                                    ${isPassed ? 'Review Hub' : 'Open Hub'}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    enrolledGrid.insertAdjacentHTML('beforeend', enrolledCardHtml);
+                });
+            }
+
+            // Load certifications shelf
+            const certsGrid = document.getElementById('certsGrid');
+            certsGrid.innerHTML = '';
+
+            if (appState.currentUser.completed.length === 0) {
+                certsGrid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align:center; padding:20px; background:var(--glass-bg); border-radius:12px; border:1px solid var(--glass-border); color:var(--text-secondary); font-size:13px;">
+                        Pass all topic quizzes inside lessons to unlock ISO credentials.
+                    </div>`;
+            } else {
+                appState.currentUser.completed.forEach(id => {
+                    const course = COURSES_DATABASE[id];
+                    const certHtml = `
+                        <div class="cert-card">
+                            <div class="cert-icon-wrapper">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.47 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                            </div>
+                            <div class="cert-info">
+                                <h4>ISO Certification - ${course.name}</h4>
+                                <p>Verified Credential ID: TD-${id.toUpperCase()}-${Math.floor(10000 + Math.random() * 90000)}</p>
+                                <button class="btn-primary" style="padding:4px 10px; font-size:11px; margin-top:8px;" onclick="viewCertificate('${id}')">View Credential</button>
+                            </div>
+                        </div>
+                    `;
+                    certsGrid.insertAdjacentHTML('beforeend', certHtml);
+                });
+            }
+
+            // Load Gamified Badges Vault
+            const badgesGrid = document.getElementById('badgesGrid');
+            badgesGrid.innerHTML = '';
+
+            Object.keys(COURSES_DATABASE).forEach(id => {
+                const course = COURSES_DATABASE[id];
+                const isPassed = appState.currentUser.completed.includes(id);
+
+                const badgeHtml = `
+                    <div class="badge-item ${isPassed ? 'unlocked' : ''}">
+                        <div class="badge-icon">${course.icon}</div>
+                        <div class="badge-name">${course.badge}</div>
+                    </div>
+                `;
+                badgesGrid.insertAdjacentHTML('beforeend', badgeHtml);
+            });
+        }
+
+        // COURSE LEARNING HUB CONTROLS
+        function loadLearningHub() {
+            const id = appState.hubCourseId;
+            if (!id || !COURSES_DATABASE[id]) return;
+
+            const course = COURSES_DATABASE[id];
+            document.getElementById('hubCourseName').innerText = course.name;
+
+            // Load Syllabus checks & timeline
+            renderHubSyllabus();
+            renderHubTimeline();
+
+            switchHubTab('syllabus');
+        }
+
+        function switchHubTab(tabName) {
+            appState.hubActiveTab = tabName;
+
+            // Update sidebar button active styles
+            document.querySelectorAll('.hub-menu-item').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const menuBtn = document.getElementById(`hubMenu${tabName.charAt(0).toUpperCase() + tabName.slice(1)}`);
+            if (menuBtn) menuBtn.classList.add('active');
+
+            // Hide all hub panels
+            document.querySelectorAll('.hub-panel-section').forEach(pan => {
+                pan.classList.remove('active');
+            });
+            document.getElementById(`hubPanel${tabName.charAt(0).toUpperCase() + tabName.slice(1)}`).classList.add('active');
+
+            if (tabName === 'content') {
+                appState.contentIndex = 0;
+                loadChapterContent();
+            } else if (tabName === 'status') {
+                loadCourseCompletionStatus();
+            }
+        }
+
+        // Render clickable syllabus items linking directly to content chapter
+        function renderHubSyllabus() {
+            const list = document.getElementById('hubSyllabusList');
+            list.innerHTML = '';
+            const courseId = appState.hubCourseId;
+            const course = COURSES_DATABASE[courseId];
+
+            const checks = appState.currentUser.syllabusChecks ? (appState.currentUser.syllabusChecks[courseId] || [false, false, false, false, false]) : [false, false, false, false, false];
+
+            course.chapters.forEach((chap, idx) => {
+                const isDone = checks[idx];
+                const activeClass = (appState.hubActiveTab === 'content' && appState.contentIndex === idx) ? 'active' : '';
+                const completedClass = isDone ? 'completed' : '';
+
+                const itemHtml = `
+                    <div class="syllabus-item-link ${activeClass} ${completedClass}" onclick="openChapterDirectly(${idx})">
+                        <div class="syllabus-info">
+                            <div class="syllabus-num">${idx + 1}</div>
+                            <span class="syllabus-title">${chap.title}</span>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span style="font-size:11px; font-weight:700; color:${isDone ? 'var(--accent-mint)' : 'var(--text-secondary)'}; text-transform:uppercase;">
+                                ${isDone ? 'Checked Complete' : 'Syllabus Lesson'}
+                            </span>
+                            <input type="checkbox" class="syllabus-checkbox" ${isDone ? 'checked' : ''} onclick="event.stopPropagation(); return false;">
+                        </div>
+                    </div>
+                `;
+                list.insertAdjacentHTML('beforeend', itemHtml);
+            });
+        }
+
+        function openChapterDirectly(idx) {
+            appState.contentIndex = idx;
+            switchHubTab('content');
+        }
+
+        // Render Roadmap Timeline
+        function renderHubTimeline() {
+            const list = document.getElementById('hubTimeline');
+            list.innerHTML = '';
+            const courseId = appState.hubCourseId;
+            const course = COURSES_DATABASE[courseId];
+
+            const checks = appState.currentUser.syllabusChecks ? (appState.currentUser.syllabusChecks[courseId] || [false, false, false, false, false]) : [false, false, false, false, false];
+
+            course.path.forEach((step, idx) => {
+                const isDone = checks[idx];
+                const nodeHtml = `
+                    <div class="timeline-node ${isDone ? 'completed' : ''}" onclick="openChapterDirectly(${idx})" style="cursor:pointer;">
+                        <div class="timeline-content">
+                            <h3>Milestone ${idx + 1}: ${step.milestone}</h3>
+                            <p>${step.desc}</p>
+                            <span style="font-size:10px; font-weight:700; color:${isDone ? 'var(--accent-mint)' : 'var(--text-secondary)'}; text-transform:uppercase;">
+                                ${isDone ? 'Milestone Cleared' : 'Incomplete'}
+                            </span>
+                        </div>
+                    </div>
+                `;
+                list.insertAdjacentHTML('beforeend', nodeHtml);
+            });
+        }
+
+        // Load specific study content & topic-specific quiz
+        function loadChapterContent() {
+            const courseId = appState.hubCourseId;
+            const course = COURSES_DATABASE[courseId];
+            const idx = appState.contentIndex;
+
+            if (idx < 0 || idx >= course.chapters.length) return;
+
+            const chapter = course.chapters[idx];
+
+            document.getElementById('contentHeader').innerText = `Chapter ${idx + 1}: ${chapter.title}`;
+            document.getElementById('contentSubhead').innerText = `Module Learning Text`;
+            document.getElementById('contentLectureText').innerHTML = `
+                <p style="margin-bottom:15px; font-size:15px; line-height:1.7;">${chapter.content}</p>
+                <p style="font-size:14px; color:var(--text-secondary);">Review the lecture material and reference training video below. Once ready, complete the **Topic Quiz** to earn points and check off this syllabus milestone.</p>
+            `;
+
+            // Load Youtube reference video
+            document.getElementById('contentVideoIframe').src = `https://www.youtube.com/embed/${chapter.video}`;
+
+            // Set content nav buttons
+            document.getElementById('contentPrevBtn').disabled = (idx === 0);
+            document.getElementById('contentNextBtn').disabled = (idx === course.chapters.length - 1);
+
+            // Render the topic-specific quiz
+            renderTopicQuiz(courseId, idx);
+        }
+
+        function navigateContent(direction) {
+            appState.contentIndex += direction;
+            loadChapterContent();
+        }
+
+        // Render topic quiz
+        function renderTopicQuiz(courseId, chapIdx) {
+            const container = document.getElementById('topicQuizContainer');
+            container.innerHTML = '';
+
+            const course = COURSES_DATABASE[courseId];
+            const chapter = course.chapters[chapIdx];
+            const isCompleted = appState.currentUser.syllabusChecks && appState.currentUser.syllabusChecks[courseId] && appState.currentUser.syllabusChecks[courseId][chapIdx];
+
+            if (isCompleted) {
+                container.innerHTML = `
+                    <div style="text-align:center; padding:10px 0;">
+                        <span style="font-size:32px;">✓</span>
+                        <h4 style="color:var(--accent-mint); font-family:var(--font-heading); margin-top:10px;">Topic Quiz Cleared!</h4>
+                        <p style="font-size:12px; color:var(--text-secondary); margin-top:5px;">You have verified this syllabus topic. Check off other chapters to finish the course.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Reset selected choices for this topic attempt
+            appState.selectedTopicAnswers = {};
+
+            let html = `
+                <div class="topic-quiz-title">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    <span>Topic Quiz: Verify Lecture Knowledge</span>
+                </div>
+            `;
+
+            chapter.quiz.forEach((qObj, qIdx) => {
+                let optsHtml = '';
+                qObj.o.forEach((opt, oIdx) => {
+                    optsHtml += `
+                        <div class="topic-quiz-opt" id="tq_${chapIdx}_q_${qIdx}_o_${oIdx}" onclick="selectTopicQuizAnswer(${qIdx}, ${oIdx})">
+                            <input type="radio" class="topic-quiz-opt-radio" id="trad_${chapIdx}_${qIdx}_${oIdx}" name="topic_q_${qIdx}">
+                            <span>${opt}</span>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="topic-quiz-question-container">
+                        <div class="topic-quiz-question">Question ${qIdx + 1}: ${qObj.q}</div>
+                        <div class="topic-quiz-options">${optsHtml}</div>
+                    </div>
+                `;
+            });
+
+            html += `
+                <button class="btn-primary" style="width:100%; margin-top:15px;" onclick="submitTopicQuiz(${chapIdx})">Verify and Complete Topic</button>
+                <div id="topicQuizFeedback" class="topic-quiz-feedback hidden"></div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function selectTopicQuizAnswer(qIdx, oIdx) {
+            appState.selectedTopicAnswers[qIdx] = oIdx;
+
+            // Update radio checks
+            document.querySelectorAll(`input[name="topic_q_${qIdx}"]`).forEach(rad => {
+                rad.checked = false;
+            });
+            const selectedRad = document.getElementById(`trad_${appState.contentIndex}_${qIdx}_${oIdx}`);
+            if (selectedRad) selectedRad.checked = true;
+
+            // Highlight opt card
+            const courseId = appState.hubCourseId;
+            const course = COURSES_DATABASE[courseId];
+            const chapter = course.chapters[appState.contentIndex];
+            
+            chapter.quiz[qIdx].o.forEach((_, optIdx) => {
+                const el = document.getElementById(`tq_${appState.contentIndex}_q_${qIdx}_o_${optIdx}`);
+                if (el) el.classList.remove('selected');
+            });
+            const activeEl = document.getElementById(`tq_${appState.contentIndex}_q_${qIdx}_o_${oIdx}`);
+            if (activeEl) activeEl.classList.add('selected');
+        }
+
+        function submitTopicQuiz(chapIdx) {
+            const courseId = appState.hubCourseId;
+            const course = COURSES_DATABASE[courseId];
+            const chapter = course.chapters[chapIdx];
+            const feedbackBox = document.getElementById('topicQuizFeedback');
+
+            const totalQ = chapter.quiz.length;
+            const answered = Object.keys(appState.selectedTopicAnswers).length;
+
+            if (answered < totalQ) {
+                showToast("Incomplete Quiz", "Please select answers for both questions before submitting.", "error");
+                return;
+            }
+
+            // Grade
+            let isCorrect = true;
+            chapter.quiz.forEach((qObj, qIdx) => {
+                if (appState.selectedTopicAnswers[qIdx] !== qObj.a) {
+                    isCorrect = false;
+                }
+            });
+
+            feedbackBox.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedbackBox.className = "topic-quiz-feedback success";
+                feedbackBox.innerText = "Correct! You passed the topic quiz. Chapter checked complete.";
+                
+                // Set complete checklist
+                if (!appState.currentUser.syllabusChecks) appState.currentUser.syllabusChecks = {};
+                if (!appState.currentUser.syllabusChecks[courseId]) appState.currentUser.syllabusChecks[courseId] = [false, false, false, false, false];
+
+                appState.currentUser.syllabusChecks[courseId][chapIdx] = true;
+                appState.currentUser.points += 40; // Earn points!
+
+                saveSession();
+                showToast("Topic Cleared", "+40 Points earned!", "success");
+
+                // Check if all 5 chapters are complete to finalize the course
+                const allChecks = appState.currentUser.syllabusChecks[courseId];
+                const allDone = allChecks.every(c => c);
+
+                if (allDone && !appState.currentUser.completed.includes(courseId)) {
+                    appState.currentUser.completed.push(courseId);
+                    appState.currentUser.points += 150; // passing completion points
+                    saveSession();
+
+                    const certMailBody = `Dear ${appState.currentUser.name},\n\nCONGRATULATIONS!\n\nYou have officially completed all components of "${course.name}" and passed all topic verification checkpoints.\n\nYour credential is active under verification number TD-${courseId.toUpperCase()}-${Math.floor(10000 + Math.random() * 90000)}.\n\nWe have awarded you 150 Profile Points and unlocked your "${course.badge}" badge in your Dashboard!\n\nKeep pushing your limits.\n\nBest regards,\nMounika Rayapalli\nDirector, Tech Desire Institute`;
+                    sendSimulatedEmail(`Passed: Certification Earned in ${course.name}`, certMailBody);
+                    showToast("Course Completed!", `You earned the ${course.name} Certificate! +150 Points!`, "success");
+                }
+
+                // Render syllabus and timeline update
+                renderHubSyllabus();
+                renderHubTimeline();
+
+                // Re-render topic quiz after a delay
+                setTimeout(() => {
+                    renderTopicQuiz(courseId, chapIdx);
+                }, 2000);
+
+            } else {
+                feedbackBox.className = "topic-quiz-feedback error";
+                feedbackBox.innerText = "Some answers were incorrect. Please review the material and try again.";
+            }
+        }
+
+        // Render course completion & credentials tab
+        function loadCourseCompletionStatus() {
+            const courseId = appState.hubCourseId;
+            const course = COURSES_DATABASE[courseId];
+            const panel = document.getElementById('courseCompletionPanel');
+            panel.innerHTML = '';
+
+            const checks = appState.currentUser.syllabusChecks ? (appState.currentUser.syllabusChecks[courseId] || [false, false, false, false, false]) : [false, false, false, false, false];
+            const completedCount = checks.filter(c => c).length;
+            const isCompleted = appState.currentUser.completed.includes(courseId);
+
+            let html = `
+                <div style="background:var(--glass-bg); padding:30px; border-radius:16px; border:1px solid var(--glass-border); text-align:center;">
+                    <h3 style="font-family:var(--font-heading); color:var(--white); margin-bottom:15px;">Progress Status</h3>
+                    <div style="font-size:36px; font-weight:800; color:var(--accent-mint); margin-bottom:10px;">${completedCount} / 5 Chapters</div>
+                    <p style="font-size:14px; color:var(--text-secondary); max-width:400px; margin:0 auto 20px auto;">
+                        You must complete reading units and pass all 5 topic quizzes to unlock the certificate.
+                    </p>
+            `;
+
+            if (isCompleted) {
+                html += `
+                    <div style="margin-top:20px;">
+                        <span style="font-size:45px;">🏆</span>
+                        <h4 style="color:var(--accent-mint); margin-top:10px;">Course Finished!</h4>
+                        <button class="btn-primary" style="margin-top:15px;" onclick="viewCertificate('${courseId}')">View ISO Certification</button>
+                    </div>
+                `;
+            } else {
+                html += `
+                    <div style="margin-top:10px;">
+                        <span style="color:#ef4444; font-weight:700;">Locked</span>
+                        <p style="font-size:12px; color:var(--text-secondary); margin-top:5px;">Complete outstanding chapters to release certificate.</p>
+                    </div>
+                `;
+            }
+
+            html += `</div>`;
+            panel.innerHTML = html;
+        }
+
+        // CERTIFICATE VIEW MODAL
+        function viewCertificate(courseId) {
+            const course = COURSES_DATABASE[courseId];
+            if (!course) return;
+
+            document.getElementById('certUserName').innerText = appState.currentUser.name;
+            document.getElementById('certCourseName').innerText = course.name;
+            document.getElementById('certDateValue').innerText = new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+            
+            const certId = `TD-${courseId.toUpperCase()}-${Math.floor(10000 + Math.random() * 90000)}`;
+            document.getElementById('certIdValue').innerText = `Verification ID: ${certId}`;
+
+            closeModal('inboxModal');
+            openModal('certModal');
+        }
+
+        function printCertificate() {
+            const content = document.getElementById('certificateContent').innerHTML;
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>Tech Desire ISO Certification</title>
+                    <style>
+                        body { background: white; padding: 40px; display: flex; justify-content: center; }
+                        .certificate-mockup {
+                            background-color: #fbfbfb;
+                            color: #1e293b;
+                            border: 12px double #064e3b;
+                            border-radius: 8px;
+                            width: 100%;
+                            max-width: 650px;
+                            padding: 40px 30px;
+                            text-align: center;
+                            font-family: 'Georgia', serif;
+                            box-sizing: border-box;
+                        }
+                        .cert-border-inset {
+                            border: 2px solid #34d399;
+                            padding: 30px 20px;
+                        }
+                        .cert-title { font-size: 26px; font-weight: 800; color: #064e3b; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+                        .cert-sub { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #475569; margin-bottom: 25px; }
+                        .cert-body-text { font-size: 14px; line-height: 1.6; margin-bottom: 25px; color: #334155; }
+                        .cert-user-name { font-size: 28px; font-weight: 700; color: #022c22; border-bottom: 2px solid #064e3b; display: inline-block; padding: 5px 30px; margin: 10px 0; }
+                        .cert-course-name { font-weight: 700; color: #043e32; text-decoration: underline; }
+                        .cert-signatures { display: flex; justify-content: space-between; margin-top: 40px; padding: 0 40px; }
+                        .cert-sig-block { text-align: center; width: 150px; }
+                        .cert-sig-line { border-top: 1px solid #94a3b8; margin-top: 10px; font-size: 10px; color: #64748b; text-transform: uppercase; }
+                        .cert-sig-value { font-family: cursive; font-size: 14px; color: #0f172a; }
+                        .cert-badge-gold {
+                            width: 60px; height: 60px;
+                            background: radial-gradient(circle, #fcd34d 0%, #d97706 100%);
+                            border-radius: 50%; margin: 0 auto;
+                            position: relative; border: 2px dashed #78350f;
+                        }
+                        .cert-badge-gold::after {
+                            content: '★'; font-size: 24px; color: #78350f;
+                            position: absolute; top: 50%; left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        .cert-id-label { font-size: 9px; font-family: monospace; color: #64748b; margin-top: 25px; }
+                    </style>
+                </head>
+                <body onload="window.print(); window.close();">
+                    <div class="certificate-mockup">${content}</div>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        // FOOTER AND GENERAL REQUEST POST Forwarding via formsubmit.co
+        function handleGeneralRequest(event) {
+            event.preventDefault();
+            const email = document.getElementById('reqEmail').value.trim();
+            const message = document.getElementById('reqMsg').value.trim();
+
+            showToast("Submitting Form...", "Routing request details to MNP mailbox...", "success");
+
+            // Submits request using FormSubmit's AJAX endpoints
+            fetch("https://formsubmit.co/ajax/techdesire@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email,
+                    message: message,
+                    _subject: "Tech Desire Student Support Request"
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                showToast("Request Dispatched", "Email forwarded to techdesire@gmail.com successfully!", "success");
+                
+                document.getElementById('reqEmail').value = '';
+                document.getElementById('reqMsg').value = '';
+
+                // Add to user local notifications if signed in
+                if (appState.currentUser) {
+                    const notifyText = `Dear ${appState.currentUser.name},\n\nWe have received your footer contact form submission.\n\nMessage forwarded to techdesire@gmail.com:\n"${message}"\n\nMNP administrative staff will process this message and contact you at ${email} shortly.\n\nBest regards,\nMNP Coordination Staff`;
+                    sendSimulatedEmail("Auto-Notice: Support Ticket Opened", notifyText);
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                // Fallback simulation in offline environment
+                showToast("Request Saved Offline", "Form saved locally (offline simulation).", "success");
+                
+                document.getElementById('reqEmail').value = '';
+                document.getElementById('reqMsg').value = '';
+            });
+        }
+    </script>
+</body>
+</html>
